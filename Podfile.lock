@@ -1,0 +1,90 @@
+PODS:
+  - Alamofire (4.7.0)
+  - Differentiator (3.0.2)
+  - ESTabBarController-swift (2.6.1)
+  - HandyJSON (4.1.1)
+  - IQKeyboardManagerSwift (5.0.8)
+  - Kingfisher (4.6.3)
+  - MJRefresh (3.1.15.3)
+  - Moya/Core (11.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - "NSObject+Rx (4.3.0)":
+    - RxSwift (~> 4.0)
+  - Result (3.2.4)
+  - Reusable (4.0.2):
+    - Reusable/Storyboard (= 4.0.2)
+    - Reusable/View (= 4.0.2)
+  - Reusable/Storyboard (4.0.2)
+  - Reusable/View (4.0.2)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SnapKit (4.0.0)
+  - SVProgressHUD (2.2.5)
+  - Then (2.3.0)
+
+DEPENDENCIES:
+  - ESTabBarController-swift
+  - HandyJSON (~> 4.1.1)
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - MJRefresh
+  - Moya/RxSwift
+  - "NSObject+Rx"
+  - Reusable
+  - RxCocoa
+  - RxDataSources
+  - SnapKit
+  - SVProgressHUD
+  - Then
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Differentiator
+    - ESTabBarController-swift
+    - HandyJSON
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MJRefresh
+    - Moya
+    - "NSObject+Rx"
+    - Result
+    - Reusable
+    - RxCocoa
+    - RxDataSources
+    - RxSwift
+    - SnapKit
+    - SVProgressHUD
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  ESTabBarController-swift: 1e629e60bc6a87c1ea92a5309489b9f8dde15fa2
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
+  "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
+
+PODFILE CHECKSUM: a08b814356183afa5710d4056f2e48ddc45100ad
+
+COCOAPODS: 1.5.2
