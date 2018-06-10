@@ -23,16 +23,6 @@ public func ==<T: Equatable>(lhs: [T]?, rhs: [T]?) -> Bool {
 extension Array
 {
   
-    public func get(at index: Int) -> Element? {
-        guard index >= 0 && index < count else { return nil }
-        return self[index]
-    }
-    
-    
-    public mutating func removeAll(_ elements: [Element]) {
-      
-       
-    }
     
     
     

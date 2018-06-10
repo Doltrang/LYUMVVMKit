@@ -30,21 +30,23 @@ PODS:
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
   - Then (2.3.0)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
-  - ESTabBarController-swift
+  - ESTabBarController-swift (~> 2.6.1)
   - HandyJSON (~> 4.1.1)
-  - IQKeyboardManagerSwift
-  - Kingfisher
-  - MJRefresh
-  - Moya/RxSwift
-  - "NSObject+Rx"
-  - Reusable
-  - RxCocoa
-  - RxDataSources
-  - SnapKit
-  - SVProgressHUD
-  - Then
+  - IQKeyboardManagerSwift (~> 5.0.8)
+  - Kingfisher (~> 4.6.3)
+  - MJRefresh (~> 3.1.15.3)
+  - Moya/RxSwift (~> 11.0.1)
+  - "NSObject+Rx (~> 4.3.0)"
+  - Reusable (~> 4.0.2)
+  - RxCocoa (~> 4.1.2)
+  - RxDataSources (~> 3.0.2)
+  - SnapKit (~> 4.0.0)
+  - SVProgressHUD (~> 2.2.5)
+  - Then (~> 2.3.0)
+  - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -65,6 +67,7 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - Then
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -84,7 +87,8 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: a08b814356183afa5710d4056f2e48ddc45100ad
+PODFILE CHECKSUM: 9dac9cc8a8e2a5c5c2f15600e26c7f98e3218c33
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3
