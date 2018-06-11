@@ -49,6 +49,12 @@
 		854D3E0A20A992D800DA8326 /* LYUSwiftFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0920A992D800DA8326 /* LYUSwiftFunctions.swift */; };
 		854D3E0C20A9934C00DA8326 /* LYUMacros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0B20A9934C00DA8326 /* LYUMacros.swift */; };
 		854D3E1020A9942F00DA8326 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0F20A9942F00DA8326 /* LoginVC.swift */; };
+		858504B620CE488F0039E57D /* LYUPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 858504AD20CE488F0039E57D /* LYUPageCollectionView.m */; };
+		858504B720CE488F0039E57D /* LYUPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 858504AF20CE488F0039E57D /* LYUPageControl.m */; };
+		858504B820CE488F0039E57D /* LYUPagerTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 858504B120CE488F0039E57D /* LYUPagerTransformLayout.m */; };
+		858504B920CE488F0039E57D /* LYUPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 858504B320CE488F0039E57D /* LYUPagerView.m */; };
+		858504BA20CE488F0039E57D /* LYUPagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 858504B520CE488F0039E57D /* LYUPagerViewCell.m */; };
+		858504BC20CE4D510039E57D /* LYULock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858504BB20CE4D510039E57D /* LYULock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +104,17 @@
 		854D3E0920A992D800DA8326 /* LYUSwiftFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUSwiftFunctions.swift; sourceTree = "<group>"; };
 		854D3E0B20A9934C00DA8326 /* LYUMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUMacros.swift; sourceTree = "<group>"; };
 		854D3E0F20A9942F00DA8326 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		858504AC20CE488F0039E57D /* LYUPageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUPageCollectionView.h; sourceTree = "<group>"; };
+		858504AD20CE488F0039E57D /* LYUPageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYUPageCollectionView.m; sourceTree = "<group>"; };
+		858504AE20CE488F0039E57D /* LYUPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUPageControl.h; sourceTree = "<group>"; };
+		858504AF20CE488F0039E57D /* LYUPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYUPageControl.m; sourceTree = "<group>"; };
+		858504B020CE488F0039E57D /* LYUPagerTransformLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUPagerTransformLayout.h; sourceTree = "<group>"; };
+		858504B120CE488F0039E57D /* LYUPagerTransformLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYUPagerTransformLayout.m; sourceTree = "<group>"; };
+		858504B220CE488F0039E57D /* LYUPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUPagerView.h; sourceTree = "<group>"; };
+		858504B320CE488F0039E57D /* LYUPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYUPagerView.m; sourceTree = "<group>"; };
+		858504B420CE488F0039E57D /* LYUPagerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUPagerViewCell.h; sourceTree = "<group>"; };
+		858504B520CE488F0039E57D /* LYUPagerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYUPagerViewCell.m; sourceTree = "<group>"; };
+		858504BB20CE4D510039E57D /* LYULock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULock.swift; sourceTree = "<group>"; };
 		880EC322FC07882EC6533F5A /* Pods-LYUMVVMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYUMVVMKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYUMVVMKit/Pods-LYUMVVMKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +158,7 @@
 		8517479120B66B47002CE67A /* LYUView */ = {
 			isa = PBXGroup;
 			children = (
+				858504AB20CE488F0039E57D /* LYUPagerView */,
 				851747B220B7BDCD002CE67A /* LYUCountDownBtn */,
 				8517479220B66B6C002CE67A /* LYUContentLayoutBtn */,
 			);
@@ -546,6 +564,7 @@
 				854D3E0920A992D800DA8326 /* LYUSwiftFunctions.swift */,
 				851747A220B79EBE002CE67A /* LYUMapToModelExtension.swift */,
 				6118C8E320B84B0900E3B937 /* LYUNotificationCenter.swift */,
+				858504BB20CE4D510039E57D /* LYULock.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -564,6 +583,23 @@
 				854D3E0F20A9942F00DA8326 /* LoginVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		858504AB20CE488F0039E57D /* LYUPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				858504AC20CE488F0039E57D /* LYUPageCollectionView.h */,
+				858504AD20CE488F0039E57D /* LYUPageCollectionView.m */,
+				858504AE20CE488F0039E57D /* LYUPageControl.h */,
+				858504AF20CE488F0039E57D /* LYUPageControl.m */,
+				858504B020CE488F0039E57D /* LYUPagerTransformLayout.h */,
+				858504B120CE488F0039E57D /* LYUPagerTransformLayout.m */,
+				858504B220CE488F0039E57D /* LYUPagerView.h */,
+				858504B320CE488F0039E57D /* LYUPagerView.m */,
+				858504B420CE488F0039E57D /* LYUPagerViewCell.h */,
+				858504B520CE488F0039E57D /* LYUPagerViewCell.m */,
+			);
+			path = LYUPagerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,12 +759,17 @@
 				854D3DA020A98CA900DA8326 /* ViewController.swift in Sources */,
 				854D3E0320A9919400DA8326 /* UIView+Snapshot.swift in Sources */,
 				854D3DF020A9919400DA8326 /* DispatchQueue+Once.swift in Sources */,
+				858504B920CE488F0039E57D /* LYUPagerView.m in Sources */,
 				854D3E0120A9919400DA8326 /* UIView+BlockGesture.swift in Sources */,
+				858504B720CE488F0039E57D /* LYUPageControl.m in Sources */,
 				854D3DF720A9919400DA8326 /* UIResponder+Router.swift in Sources */,
 				851747B420B7BDD5002CE67A /* LYUCountDownBtn.swift in Sources */,
 				854D3DF220A9919400DA8326 /* NSObject+Extension.swift in Sources */,
+				858504B620CE488F0039E57D /* LYUPageCollectionView.m in Sources */,
 				8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */,
+				858504BC20CE4D510039E57D /* LYULock.swift in Sources */,
 				854D3DF820A9919400DA8326 /* UserDefaults+Extension.swift in Sources */,
+				858504BA20CE488F0039E57D /* LYUPagerViewCell.m in Sources */,
 				854D3DFA20A9919400DA8326 /* UIColor+Extension.swift in Sources */,
 				854D3DFC20A9919400DA8326 /* UILabel+Extension.swift in Sources */,
 				854D3E0020A9919400DA8326 /* UIView+Animation.swift in Sources */,
@@ -742,6 +783,7 @@
 				851747A320B79EBE002CE67A /* LYUMapToModelExtension.swift in Sources */,
 				854D3E0620A9919400DA8326 /* UIViewController+UIBarButtonItem.swift in Sources */,
 				854D3DFB20A9919400DA8326 /* UIImage+Extension.swift in Sources */,
+				858504B820CE488F0039E57D /* LYUPagerTransformLayout.m in Sources */,
 				854D3E0220A9919400DA8326 /* UIView+Extension.swift in Sources */,
 				854D3DFD20A9919400DA8326 /* UIScrollView+Extension.swift in Sources */,
 				854D3D9E20A98CA900DA8326 /* AppDelegate.swift in Sources */,
