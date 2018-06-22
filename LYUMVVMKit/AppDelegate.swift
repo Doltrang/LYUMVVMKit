@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LLog(self.fetchIvarList);
         LLog(self.fetchPropertyList);
         LLog(self.fetchInstanceMethodList);
+      
         return true
     }
 

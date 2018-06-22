@@ -55,13 +55,12 @@ extension CGPoint {
         return atan2(y, x)
     }
     
-    //// EZSE: Returns the dot product of two vectors represented by points
+    ////  Returns the dot product of two vectors represented by points
     public static func dotProduct(this: CGPoint, that: CGPoint) -> CGFloat {
         return this.x * that.x + this.y * that.y
     }
     
-    /// EZSE: Performs a linear interpolation between two CGPoint values.
-    /// Inspired by https://github.com/raywenderlich/SKTUtils/blob/master/SKTUtils/CGPoint%2BExtensions.swift
+    
     public static func linearInterpolation(startPoint: CGPoint, endPoint: CGPoint, interpolationParam: CGFloat) -> CGPoint {
         return startPoint + (endPoint - startPoint) * interpolationParam
     }

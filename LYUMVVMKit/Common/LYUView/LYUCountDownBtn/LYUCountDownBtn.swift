@@ -77,7 +77,9 @@ class LYUCountDownBtn: UIButton {
         }
     }
     
-    
+    deinit {
+        self._timer = nil;
+    }
     
     
     
