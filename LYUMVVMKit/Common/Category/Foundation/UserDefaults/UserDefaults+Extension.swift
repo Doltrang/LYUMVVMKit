@@ -9,17 +9,16 @@
 import Foundation
 extension UserDefaults {
     
-    /// EZSE: Generic getter and setter for UserDefaults.
-    public subscript(key: String) -> Any? {
+    public subscript(key: String) -> String {
         get {
-            return object(forKey: key) as Any?
+            let value = object(forKey: key) as? String;
+            return value ?? ""
         }
         set {
             set(newValue, forKey: key)
         }
     }
     
-    /// EZSE: Date from UserDefaults.
     public func date(forKey key: String) -> Date? {
         return object(forKey: key) as? Date
     }

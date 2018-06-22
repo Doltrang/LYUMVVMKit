@@ -11,10 +11,10 @@ import UIKit
 
 
 //MARK:UI  Layout
-/// 屏幕宽度
+/// 屏幕高度
 let kScreenH = UIScreen.main.bounds.height
 
-/// 屏幕高度
+/// 屏幕宽度
 let kScreenW = UIScreen.main.bounds.width
 
 /// 计算布局属性 以750为基础  实现百分比布局

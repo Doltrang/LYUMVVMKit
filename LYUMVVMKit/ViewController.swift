@@ -69,16 +69,14 @@ class ViewController: UIViewController {
         btn.titleLabel?.textAlignment = .center;
          btn.setTitle("获取验证码", for: .normal);
     }
-    
-    let nvb = UINavigationBar(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 64));
-    let nitem = UINavigationItem(title: "首页");
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        UserDefaults.standard["key"] = "123123"
+        LLog(UserDefaults.standard["key"])
         
-        view.addSubview(nvb);
-        nvb.items = [nitem];
-        
-        LLog(nvb.fetchIvarList)
+        self.automaticallyAdjustsScrollViewInsets = false;
         
         
     }

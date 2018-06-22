@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
-
+enum UITextFieldPaddingDirection {
+    case left
+    case right
+}
 extension UITextField{
     
     //MARK:-设置暂位文字的颜色
@@ -40,5 +43,23 @@ extension UITextField{
         
     }
     
+    
+    /// 设置视图的偏移量
+    ///
+    /// - Parameters:
+    ///   - width: 宽度
+    ///   - direction: 方向
+    func setPadding(with width: CGFloat, direction: UITextFieldPaddingDirection) {
+        let frame = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
+        let paddingView = UIView(frame: frame)
+        switch direction {
+        case .left:
+            self.leftViewMode = .always
+            self.leftView = paddingView
+        default:
+            self.rightViewMode = .always
+            self.rightView = paddingView
+        }
+    }
     
 }
