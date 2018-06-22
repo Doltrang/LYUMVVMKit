@@ -42,25 +42,16 @@ class LYUContentLayoutBtn: UIButton {
         switch self.style {
         case .ImageTop:
             self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: 0, width: self.imgSize.width, height: self.imgSize.height);
-            let hegiht = self.currentTitle!.textHeight(font: self.titleLabel!.font, width: size.width);
-            
-            self.titleLabel?.frame = CGRect(x: 0, y: self.imgSize.height + space, width: size.width, height: min(hegiht, size.height - self.imgSize.height - self.space));
+            self.titleLabel?.frame = CGRect(x: 0, y: self.imgSize.height + space, width: size.width, height: size.height - self.imgSize.height - self.space);
         case .ImageBottom:
              self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: size.height - self.imgSize.height, width: self.imgSize.width, height: self.imgSize.height);
-            var hegiht = self.currentTitle!.textHeight(font: self.titleLabel!.font, width: size.width);
-             hegiht = min(hegiht, size.height - self.imgSize.height - self.space);
-             self.titleLabel?.frame = CGRect(x: 0, y: size.height - hegiht - self.space - self.imgSize.height, width: size.width, height: hegiht);
+             self.titleLabel?.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height - self.space - self.imgSize.height);
         case .ImageLeft:
             self.imageView?.frame = CGRect(x: 0, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height);
-          var hegiht = self.currentTitle!.textHeight(font: self.titleLabel!.font, width: size.width);
-            hegiht = min(hegiht, size.height)
-            self.titleLabel?.frame = CGRect(x: self.imgSize.width + self.space, y: (size.height - hegiht)/2.0, width: (size.width - self.imgSize.width - self.space), height: hegiht);
+            self.titleLabel?.frame = CGRect(x: self.imgSize.width + self.space, y: 0, width: (size.width - self.imgSize.width - self.space), height: size.height);
         case .ImageRight:
             self.imageView?.frame = CGRect(x: size.width - self.imgSize.width, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height);
-            
-            var hegiht = self.currentTitle!.textHeight(font: self.titleLabel!.font, width: size.width);
-            hegiht = min(hegiht, size.height)
-            self.titleLabel?.frame = CGRect(x: 0, y: (size.height - hegiht)/2.0, width: size.width - self.space - self.imgSize.width, height: hegiht);
+            self.titleLabel?.frame = CGRect(x: 0, y:0, width: size.width - self.space - self.imgSize.width, height: size.height);
         }
  
     }

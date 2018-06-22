@@ -49,6 +49,7 @@
 		854D3E0A20A992D800DA8326 /* LYUSwiftFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0920A992D800DA8326 /* LYUSwiftFunctions.swift */; };
 		854D3E0C20A9934C00DA8326 /* LYUMacros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0B20A9934C00DA8326 /* LYUMacros.swift */; };
 		854D3E1020A9942F00DA8326 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0F20A9942F00DA8326 /* LoginVC.swift */; };
+		858504BC20CE4D510039E57D /* LYULock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858504BB20CE4D510039E57D /* LYULock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		854D3E0920A992D800DA8326 /* LYUSwiftFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUSwiftFunctions.swift; sourceTree = "<group>"; };
 		854D3E0B20A9934C00DA8326 /* LYUMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUMacros.swift; sourceTree = "<group>"; };
 		854D3E0F20A9942F00DA8326 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		858504BB20CE4D510039E57D /* LYULock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULock.swift; sourceTree = "<group>"; };
 		880EC322FC07882EC6533F5A /* Pods-LYUMVVMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYUMVVMKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYUMVVMKit/Pods-LYUMVVMKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -546,6 +548,7 @@
 				854D3E0920A992D800DA8326 /* LYUSwiftFunctions.swift */,
 				851747A220B79EBE002CE67A /* LYUMapToModelExtension.swift */,
 				6118C8E320B84B0900E3B937 /* LYUNotificationCenter.swift */,
+				858504BB20CE4D510039E57D /* LYULock.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				851747B420B7BDD5002CE67A /* LYUCountDownBtn.swift in Sources */,
 				854D3DF220A9919400DA8326 /* NSObject+Extension.swift in Sources */,
 				8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */,
+				858504BC20CE4D510039E57D /* LYULock.swift in Sources */,
 				854D3DF820A9919400DA8326 /* UserDefaults+Extension.swift in Sources */,
 				854D3DFA20A9919400DA8326 /* UIColor+Extension.swift in Sources */,
 				854D3DFC20A9919400DA8326 /* UILabel+Extension.swift in Sources */,

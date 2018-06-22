@@ -69,31 +69,40 @@ class ViewController: UIViewController {
         btn.titleLabel?.textAlignment = .center;
          btn.setTitle("获取验证码", for: .normal);
     }
+    
+    let nvb = UINavigationBar(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 64));
+    let nitem = UINavigationItem(title: "首页");
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(nvb);
+        nvb.items = [nitem];
+        
+        LLog(nvb.fetchIvarList)
+        
+        
+    }
+    func testBtnUI(){
         self.view.addSubview(self.imageLeftBtn);
         self.view.addSubview(self.imageRightBtn)
         self.view.addSubview(self.imageTopBtn)
         self.view.addSubview(self.imageBottomBtn)
-
+        
         self.imageLeftBtn.snp.makeConstraints { (make) in
             make.leftMargin.equalTo(FIT_WIDTH(20));
             make.topMargin.equalTo((FIT_WIDTH(100)));
             make.width.equalTo(FIT_WIDTH(180));
             make.height.equalTo(FIT_WIDTH(102));
         }
-
-
+        
+        
         self.imageRightBtn.snp.makeConstraints { (make) in
-
+            
             make.leftMargin.equalTo(FIT_WIDTH(20));
             make.topMargin.equalTo((FIT_WIDTH(250)));
             make.width.equalTo(FIT_WIDTH(180));
             make.height.equalTo(FIT_WIDTH(102));
         }
-
-
-
 
         self.imageTopBtn.snp.makeConstraints { (make) in
             make.leftMargin.equalTo(FIT_WIDTH(300));
@@ -101,16 +110,16 @@ class ViewController: UIViewController {
             make.width.equalTo(FIT_WIDTH(102));
             make.height.equalTo(FIT_WIDTH(180));
         }
-
-
+        
+        
         self.imageBottomBtn.snp.makeConstraints { (make) in
-
+            
             make.leftMargin.equalTo(FIT_WIDTH(300));
             make.topMargin.equalTo((FIT_WIDTH(500)));
             make.width.equalTo(FIT_WIDTH(102));
             make.height.equalTo(FIT_WIDTH(180));
         }
-
+        
         self.view.addSubview(self.countDownBtn);
         self.countDownBtn.snp.makeConstraints { (make) in
             make.bottomMargin.equalTo(-FIT_WIDTH(100))
@@ -129,9 +138,6 @@ class ViewController: UIViewController {
             btn.isUserInteractionEnabled = true;
             return "重新获取"
         }
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
