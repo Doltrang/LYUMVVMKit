@@ -9,9 +9,24 @@
 /* Begin PBXBuildFile section */
 		3F5C873BD6F5F1C926769618 /* Pods_LYUMVVMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */; };
 		6118C8E420B84B0900E3B937 /* LYUNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118C8E320B84B0900E3B937 /* LYUNotificationCenter.swift */; };
+		617456AC20DE99E3005FF7FD /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617456AB20DE99E3005FF7FD /* HomeViewCell.swift */; };
 		61836CE520DD35A80002BB11 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CE420DD35A80002BB11 /* BaseNavigationController.swift */; };
 		61836CE720DD381E0002BB11 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CE620DD381E0002BB11 /* BaseViewController.swift */; };
 		61836CED20DD3F6F0002BB11 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CEC20DD3F6F0002BB11 /* UIView+Core.swift */; };
+		61836CF220DDD5220002BB11 /* LoginM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CF120DDD5220002BB11 /* LoginM.swift */; };
+		61836CF420DDD5970002BB11 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CF320DDD5970002BB11 /* BaseModel.swift */; };
+		61836CF720DDD6760002BB11 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CF620DDD6760002BB11 /* LoginVM.swift */; };
+		61836CFA20DDD98D0002BB11 /* LYUHomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CF920DDD98D0002BB11 /* LYUHomeAPI.swift */; };
+		61836CFD20DDDEBC0002BB11 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CFC20DDDEBC0002BB11 /* BaseViewModel.swift */; };
+		61836D0020DE04AD0002BB11 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836CFF20DE04AD0002BB11 /* HomeVC.swift */; };
+		61836D0320DE04C90002BB11 /* HomeM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D0220DE04C90002BB11 /* HomeM.swift */; };
+		61836D0620DE04EB0002BB11 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D0520DE04EB0002BB11 /* HomeViewModel.swift */; };
+		61836D0920DE193D0002BB11 /* LYUMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D0820DE193D0002BB11 /* LYUMainVC.swift */; };
+		61836D0C20DE1E870002BB11 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D0B20DE1E870002BB11 /* VideoVC.swift */; };
+		61836D0F20DE1EC90002BB11 /* MineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D0E20DE1EC90002BB11 /* MineVC.swift */; };
+		61836D1220DE1EF30002BB11 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D1120DE1EF30002BB11 /* MessageVC.swift */; };
+		61836D1620DE208C0002BB11 /* BackgroundContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D1420DE208C0002BB11 /* BackgroundContentView.swift */; };
+		61836D1720DE208C0002BB11 /* BasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D1520DE208C0002BB11 /* BasicContentView.swift */; };
 		8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517478F20B659F4002CE67A /* LYUViewModelType.swift */; };
 		8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */; };
 		8517479820B68D0D002CE67A /* read_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8517479720B68D0D002CE67A /* read_share.png */; };
@@ -59,9 +74,24 @@
 		39612B5BA894B8B3F40E3AF9 /* Pods-LYUMVVMKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYUMVVMKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYUMVVMKit/Pods-LYUMVVMKit.debug.xcconfig"; sourceTree = "<group>"; };
 		6118C8E320B84B0900E3B937 /* LYUNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUNotificationCenter.swift; sourceTree = "<group>"; };
 		6118C8E520B9B26100E3B937 /* LYUProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LYUProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		617456AB20DE99E3005FF7FD /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		61836CE420DD35A80002BB11 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		61836CE620DD381E0002BB11 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		61836CEC20DD3F6F0002BB11 /* UIView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
+		61836CF120DDD5220002BB11 /* LoginM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginM.swift; sourceTree = "<group>"; };
+		61836CF320DDD5970002BB11 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		61836CF620DDD6760002BB11 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		61836CF920DDD98D0002BB11 /* LYUHomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUHomeAPI.swift; sourceTree = "<group>"; };
+		61836CFC20DDDEBC0002BB11 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		61836CFF20DE04AD0002BB11 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		61836D0220DE04C90002BB11 /* HomeM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeM.swift; sourceTree = "<group>"; };
+		61836D0520DE04EB0002BB11 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		61836D0820DE193D0002BB11 /* LYUMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUMainVC.swift; sourceTree = "<group>"; };
+		61836D0B20DE1E870002BB11 /* VideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
+		61836D0E20DE1EC90002BB11 /* MineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineVC.swift; sourceTree = "<group>"; };
+		61836D1120DE1EF30002BB11 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		61836D1420DE208C0002BB11 /* BackgroundContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundContentView.swift; sourceTree = "<group>"; };
+		61836D1520DE208C0002BB11 /* BasicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicContentView.swift; sourceTree = "<group>"; };
 		663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYUMVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8517478F20B659F4002CE67A /* LYUViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUViewModelType.swift; sourceTree = "<group>"; };
 		8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUContentLayoutBtn.swift; sourceTree = "<group>"; };
@@ -138,11 +168,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		617456AA20DE99A7005FF7FD /* V */ = {
+			isa = PBXGroup;
+			children = (
+				617456AB20DE99E3005FF7FD /* HomeViewCell.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		61836CE320DD35770002BB11 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				61836CE420DD35A80002BB11 /* BaseNavigationController.swift */,
 				61836CE620DD381E0002BB11 /* BaseViewController.swift */,
+				61836CF320DDD5970002BB11 /* BaseModel.swift */,
+				61836CFC20DDDEBC0002BB11 /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -153,6 +193,99 @@
 				61836CEC20DD3F6F0002BB11 /* UIView+Core.swift */,
 			);
 			path = "UIView+Core";
+			sourceTree = "<group>";
+		};
+		61836CF020DDD5060002BB11 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				61836CF120DDD5220002BB11 /* LoginM.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		61836CF520DDD6670002BB11 /* LoginVM */ = {
+			isa = PBXGroup;
+			children = (
+				61836CF620DDD6760002BB11 /* LoginVM.swift */,
+			);
+			path = LoginVM;
+			sourceTree = "<group>";
+		};
+		61836CF820DDD96C0002BB11 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				61836CF920DDD98D0002BB11 /* LYUHomeAPI.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		61836CFE20DE047E0002BB11 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				617456AA20DE99A7005FF7FD /* V */,
+				61836D0420DE04CD0002BB11 /* VM */,
+				61836D0120DE04B30002BB11 /* M */,
+				61836CFF20DE04AD0002BB11 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		61836D0120DE04B30002BB11 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				61836D0220DE04C90002BB11 /* HomeM.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		61836D0420DE04CD0002BB11 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				61836D0520DE04EB0002BB11 /* HomeViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		61836D0720DE19130002BB11 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				61836D1320DE208C0002BB11 /* View */,
+				61836D0820DE193D0002BB11 /* LYUMainVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		61836D0A20DE1E5D0002BB11 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				61836D0B20DE1E870002BB11 /* VideoVC.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		61836D0D20DE1EB70002BB11 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				61836D0E20DE1EC90002BB11 /* MineVC.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		61836D1020DE1EE20002BB11 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				61836D1120DE1EF30002BB11 /* MessageVC.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		61836D1320DE208C0002BB11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61836D1420DE208C0002BB11 /* BackgroundContentView.swift */,
+				61836D1520DE208C0002BB11 /* BasicContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8517478E20B659DA002CE67A /* Protocol */ = {
@@ -260,6 +393,7 @@
 		854D3DB020A990B500DA8326 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				61836CF820DDD96C0002BB11 /* APIManager */,
 				61836CE320DD35770002BB11 /* Base */,
 				8517478E20B659DA002CE67A /* Protocol */,
 				8517479120B66B47002CE67A /* LYUView */,
@@ -581,6 +715,11 @@
 		854D3E0D20A993F900DA8326 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				61836D1020DE1EE20002BB11 /* Message */,
+				61836D0D20DE1EB70002BB11 /* Mine */,
+				61836D0A20DE1E5D0002BB11 /* Video */,
+				61836D0720DE19130002BB11 /* Main */,
+				61836CFE20DE047E0002BB11 /* Home */,
 				854D3E0E20A9940B00DA8326 /* Login */,
 			);
 			path = Module;
@@ -589,6 +728,8 @@
 		854D3E0E20A9940B00DA8326 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				61836CF520DDD6670002BB11 /* LoginVM */,
+				61836CF020DDD5060002BB11 /* M */,
 				854D3E0F20A9942F00DA8326 /* LoginVC.swift */,
 			);
 			path = Login;
@@ -744,14 +885,20 @@
 				854D3DED20A9919400DA8326 /* Array+Extension.swift in Sources */,
 				854D3DF320A9919400DA8326 /* String+Extension.swift in Sources */,
 				8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */,
+				61836D1720DE208C0002BB11 /* BasicContentView.swift in Sources */,
+				61836D0C20DE1E870002BB11 /* VideoVC.swift in Sources */,
+				61836CF220DDD5220002BB11 /* LoginM.swift in Sources */,
 				854D3E0C20A9934C00DA8326 /* LYUMacros.swift in Sources */,
 				6118C8E420B84B0900E3B937 /* LYUNotificationCenter.swift in Sources */,
 				61836CED20DD3F6F0002BB11 /* UIView+Core.swift in Sources */,
+				617456AC20DE99E3005FF7FD /* HomeViewCell.swift in Sources */,
 				61836CE720DD381E0002BB11 /* BaseViewController.swift in Sources */,
 				854D3E0420A9919400DA8326 /* UIViewController+Slide.swift in Sources */,
+				61836D1620DE208C0002BB11 /* BackgroundContentView.swift in Sources */,
 				8517479A20B68E4E002CE67A /* LYUThirdLibConfig.swift in Sources */,
 				854D3DA020A98CA900DA8326 /* ViewController.swift in Sources */,
 				854D3E0320A9919400DA8326 /* UIView+Snapshot.swift in Sources */,
+				61836CF720DDD6760002BB11 /* LoginVM.swift in Sources */,
 				854D3DF020A9919400DA8326 /* DispatchQueue+Once.swift in Sources */,
 				854D3E0120A9919400DA8326 /* UIView+BlockGesture.swift in Sources */,
 				854D3DF720A9919400DA8326 /* UIResponder+Router.swift in Sources */,
@@ -762,23 +909,32 @@
 				854D3DF820A9919400DA8326 /* UserDefaults+Extension.swift in Sources */,
 				854D3DFA20A9919400DA8326 /* UIColor+Extension.swift in Sources */,
 				854D3DFC20A9919400DA8326 /* UILabel+Extension.swift in Sources */,
+				61836D0620DE04EB0002BB11 /* HomeViewModel.swift in Sources */,
+				61836D1220DE1EF30002BB11 /* MessageVC.swift in Sources */,
 				854D3E0020A9919400DA8326 /* UIView+Animation.swift in Sources */,
 				854D3E1020A9942F00DA8326 /* LoginVC.swift in Sources */,
 				854D3DFF20A9919400DA8326 /* UITextField+Extension.swift in Sources */,
 				854D3DEE20A9919400DA8326 /* CGFloat+Extension.swift in Sources */,
+				61836D0F20DE1EC90002BB11 /* MineVC.swift in Sources */,
 				854D3DF920A9919400DA8326 /* UIButton+Extension.swift in Sources */,
 				854D3DFE20A9919400DA8326 /* UIScrollView+Slide.swift in Sources */,
 				854D3DEF20A9919400DA8326 /* CGPoint+Extension.swift in Sources */,
 				61836CE520DD35A80002BB11 /* BaseNavigationController.swift in Sources */,
+				61836D0020DE04AD0002BB11 /* HomeVC.swift in Sources */,
 				854D3DF520A9919400DA8326 /* String+Validate.swift in Sources */,
+				61836CFA20DDD98D0002BB11 /* LYUHomeAPI.swift in Sources */,
 				851747A320B79EBE002CE67A /* LYUMapToModelExtension.swift in Sources */,
 				854D3E0620A9919400DA8326 /* UIViewController+UIBarButtonItem.swift in Sources */,
 				854D3DFB20A9919400DA8326 /* UIImage+Extension.swift in Sources */,
+				61836CF420DDD5970002BB11 /* BaseModel.swift in Sources */,
+				61836CFD20DDDEBC0002BB11 /* BaseViewModel.swift in Sources */,
 				854D3E0220A9919400DA8326 /* UIView+Extension.swift in Sources */,
 				854D3DFD20A9919400DA8326 /* UIScrollView+Extension.swift in Sources */,
 				854D3D9E20A98CA900DA8326 /* AppDelegate.swift in Sources */,
 				854D3DF120A9919400DA8326 /* NSAttributedString+Extension.swift in Sources */,
 				851747A720B7AB0F002CE67A /* FileManager+Extension.swift in Sources */,
+				61836D0320DE04C90002BB11 /* HomeM.swift in Sources */,
+				61836D0920DE193D0002BB11 /* LYUMainVC.swift in Sources */,
 				854D3DF620A9919400DA8326 /* Timer+WeakProxy.swift in Sources */,
 				854D3E0A20A992D800DA8326 /* LYUSwiftFunctions.swift in Sources */,
 				854D3DF420A9919400DA8326 /* String+Slices.swift in Sources */,

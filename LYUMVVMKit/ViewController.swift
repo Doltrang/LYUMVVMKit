@@ -69,14 +69,12 @@ class ViewController: UIViewController {
         btn.titleLabel?.textAlignment = .center;
          btn.setTitle("获取验证码", for: .normal);
     }
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        UserDefaults.standard["key"] = "123123"
-        LLog(UserDefaults.standard["key"])
-        
-        self.automaticallyAdjustsScrollViewInsets = false;
+        let vm = LoginVM()
+     
         
         
     }

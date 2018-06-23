@@ -16,5 +16,7 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    deinit {
+        LLog("释放了")
+    }
 }
