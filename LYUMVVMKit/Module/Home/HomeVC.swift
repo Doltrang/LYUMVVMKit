@@ -55,24 +55,10 @@ extension HomeVC
             let cell : HomeViewCell = tv.dequeueReusableCell(for: index)
             cell.descLabel.text = model.desc
             cell.sourceLabel.text = "来源:" + model.source + "类别:" +  model.type;
-            LLog(model.url);
             cell.imageV.kf.setImage(with: URL(string: model.url))
-            cell.imageV.backgroundColor = UIColor.gray
-            LLog(model.type)
             return cell
         })
         
-        // 绑定cell
-//        dataSource.configureCell = { ds, tv, ip, item in
-//            let cell : HomeViewCell = tv.dequeueReusableCell(for: index)
-//            cell.descLabel.text = model.desc
-//            cell.sourceLabel.text = model.source + model.type;
-//            LLog(model.url);
-//            cell.imageV.kf.setImage(with: URL(string: model.url))
-//            cell.imageV.backgroundColor = UIColor.gray
-//            LLog(model.type)
-//            return cell
-//        }
         
         // 设置代理
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
@@ -107,7 +93,7 @@ extension HomeVC
             }
         }).disposed(by: rx.disposeBag)
         
-         self.vmOutput?.requestCommond.onNext(true)
+         self.tableView.mj_header.beginRefreshing()
     }
 }
 

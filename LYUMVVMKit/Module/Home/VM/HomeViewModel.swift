@@ -55,15 +55,20 @@ extension HomeViewModel:LYUViewModelType
         output.requestCommond.subscribe { (event) in
             if let isReloadData = event.element{
                 self.index = isReloadData ? 1 : self.index+1;
-          
-                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).asObservable().mapModel(HomeM.self).subscribe({ (responseEvent)  in
-                    if let response = responseEvent.element{
+             
+                LLog("入参:category:\(input.category)==index:\(self.index)")
+                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
+                    if(response.results.count > 0 ){
                         self.models.value = isReloadData ? response.results : self.models.value + response.results;
                         output.refreshStatus.value = isReloadData ? .endHeaderRefresh : .endFooterRefresh
-                    }else{
+                    }else {
                         output.refreshStatus.value = .noMoreData
                     }
-                }).disposed(by: disposeBag)
+                }, onError: { (error) in
+                    LLog(error);
+                }, onCompleted: {
+                    LLog("完成")
+                }, onDisposed: nil).disposed(by: disposeBag)
                 
                 
     

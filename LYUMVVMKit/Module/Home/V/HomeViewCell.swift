@@ -13,7 +13,6 @@ class HomeViewCell: UITableViewCell,Reusable {
 
     var imageV:UIImageView = {
         let img = UIImageView();
-        img.backgroundColor = UIColor.random()
         return img;
     }()
     
