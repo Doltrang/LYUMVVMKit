@@ -13,6 +13,7 @@ class HomeViewCell: UITableViewCell,Reusable {
 
     var imageV:UIImageView = {
         let img = UIImageView();
+        img.backgroundColor = UIColor.random()
         return img;
     }()
     
@@ -49,21 +50,21 @@ extension HomeViewCell{
         
         self.imageV.snp.makeConstraints { (make) in
             make.leftMargin.equalTo(self.contentView.snp.left);
-            make.centerY.equalTo(self.contentView)
+            make.centerY.equalTo(self.contentView.snp.centerY)
             make.width.equalTo(FIT_WIDTH(200));
             make.height.equalTo(FIT_WIDTH(210));
         }
         
         self.descLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.imageV.snp.right).offset(FIT_WIDTH(20))
-            make.width.lessThanOrEqualTo(FIT_WIDTH(100));
+            make.width.lessThanOrEqualTo(FIT_WIDTH(300));
             make.height.equalTo(FIT_WIDTH(40));
             make.top.equalTo(self.imageV.snp.top);
         }
         
         self.sourceLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.descLabel)
-            make.width.equalTo(FIT_WIDTH(100))
+            make.width.equalTo(FIT_WIDTH(300))
             make.height.lessThanOrEqualTo(FIT_WIDTH(200))
             make.top.equalTo(self.descLabel.snp.bottom).offset(FIT_WIDTH(40))
         }

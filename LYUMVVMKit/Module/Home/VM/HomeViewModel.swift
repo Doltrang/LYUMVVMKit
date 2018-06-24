@@ -13,7 +13,7 @@ import RxCocoa
 
 class HomeViewModel: BaseViewModel {
     // 存放着解析完成的模型数组
-    let models = Variable<[HomeM]>([])
+    let models = Variable<[HomeResult]>([])
     // 记录当前的索引值
     var index: Int = 1
     
@@ -55,14 +55,20 @@ extension HomeViewModel:LYUViewModelType
         output.requestCommond.subscribe { (event) in
             if let isReloadData = event.element{
                 self.index = isReloadData ? 1 : self.index+1;
-                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).mapJSON().subscribe(onSuccess: { (response) in
-                    LLog(response);
-                }, onError: { (error) in
-                    LLog(error);
+          
+                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).asObservable().mapModel(HomeM.self).subscribe({ (responseEvent)  in
+                    if let response = responseEvent.element{
+                        self.models.value = isReloadData ? response.results : self.models.value + response.results;
+                        output.refreshStatus.value = isReloadData ? .endHeaderRefresh : .endFooterRefresh
+                    }else{
+                        output.refreshStatus.value = .noMoreData
+                    }
                 }).disposed(by: disposeBag)
+                
+                
     
             }else{
-                
+             
             }
             
             

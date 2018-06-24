@@ -11,27 +11,21 @@ import RxDataSources
 import RxSwift
 import NSObject_Rx
 import Reusable
-
+import Kingfisher
 
 class HomeVC: BaseViewController {
 
     let viewModel = HomeViewModel()
     
     let tableView = UITableView().then {
-        $0.backgroundColor = UIColor.red
+        $0.backgroundColor = UIColor.white
         $0.register(cellType: HomeViewCell.self)
         $0.rowHeight = HomeViewCell.cellHeigh()
     }
     
     var vmOutput : HomeViewModel.Output?
     
-    let dataSource = RxTableViewSectionedReloadDataSource<HomeSection>(configureCell: { (_, tv, index, model) -> UITableViewCell in
-        let cell : HomeViewCell = tv.dequeueReusableCell(for: index)
-        cell.descLabel.text = model.desc
-        cell.sourceLabel.text = model.source;
-        
-        return cell
-    })
+
   
     
     
@@ -57,13 +51,28 @@ extension HomeVC
     
     
     fileprivate func bindView() {
-        // 绑定cell
-        dataSource.configureCell = { ds, tv, ip, item in
-            let cell = tv.dequeueReusableCell(for: ip) as HomeViewCell
-            cell.descLabel.text = "描述: \(item.desc)"
-            cell.sourceLabel.text = "来源: \(item.source)"
+        let dataSource = RxTableViewSectionedReloadDataSource<HomeSection>(configureCell: { (_, tv, index, model) -> UITableViewCell in
+            let cell : HomeViewCell = tv.dequeueReusableCell(for: index)
+            cell.descLabel.text = model.desc
+            cell.sourceLabel.text = "来源:" + model.source + "类别:" +  model.type;
+            LLog(model.url);
+            cell.imageV.kf.setImage(with: URL(string: model.url))
+            cell.imageV.backgroundColor = UIColor.gray
+            LLog(model.type)
             return cell
-        }
+        })
+        
+        // 绑定cell
+//        dataSource.configureCell = { ds, tv, ip, item in
+//            let cell : HomeViewCell = tv.dequeueReusableCell(for: index)
+//            cell.descLabel.text = model.desc
+//            cell.sourceLabel.text = model.source + model.type;
+//            LLog(model.url);
+//            cell.imageV.kf.setImage(with: URL(string: model.url))
+//            cell.imageV.backgroundColor = UIColor.gray
+//            LLog(model.type)
+//            return cell
+//        }
         
         // 设置代理
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)

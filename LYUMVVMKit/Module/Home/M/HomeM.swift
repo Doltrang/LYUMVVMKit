@@ -13,6 +13,11 @@ import RxDataSources
 import HandyJSON
 
 struct HomeM: HandyJSON {
+    var error = 0;
+    var results:[HomeResult] = [HomeResult]()
+}
+
+struct HomeResult:HandyJSON {
     var _id         = ""
     var createdAt   = ""
     var desc        = ""
@@ -22,14 +27,14 @@ struct HomeM: HandyJSON {
     var url         = ""
     var used        = ""
     var who         = ""
-    
 }
 
 struct HomeSection {
     var items: [Item]
 }
+
 extension HomeSection: SectionModelType {
-    typealias Item = HomeM
+    typealias Item = HomeResult
     init(original: HomeSection, items: [HomeSection.Item]) {
         self = original
         self.items = items
