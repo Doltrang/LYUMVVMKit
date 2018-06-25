@@ -31,6 +31,7 @@ class HomeViewCell: UITableViewCell,Reusable {
     }()
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
         self.setupUI();
     }
     
@@ -50,8 +51,8 @@ extension HomeViewCell{
         self.imageV.snp.makeConstraints { (make) in
             make.leftMargin.equalTo(self.contentView.snp.left);
             make.centerY.equalTo(self.contentView.snp.centerY)
-            make.width.equalTo(FIT_WIDTH(200));
-            make.height.equalTo(FIT_WIDTH(210));
+            make.width.equalTo(FIT_WIDTH(260));
+            make.height.equalTo(FIT_WIDTH(260));
         }
         
         self.descLabel.snp.makeConstraints { (make) in
@@ -68,11 +69,11 @@ extension HomeViewCell{
             make.top.equalTo(self.descLabel.snp.bottom).offset(FIT_WIDTH(40))
         }
         
-        
+    
     }
 }
 extension HomeViewCell {
     static func cellHeigh() -> CGFloat {
-        return FIT_WIDTH(210)
+        return FIT_WIDTH(260)
     }
 }

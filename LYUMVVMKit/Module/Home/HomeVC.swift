@@ -25,11 +25,6 @@ class HomeVC: BaseViewController {
     
     var vmOutput : HomeViewModel.Output?
     
-
-  
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI();
@@ -56,12 +51,23 @@ extension HomeVC
             cell.descLabel.text = model.desc
             cell.sourceLabel.text = "来源:" + model.source + "类别:" +  model.type;
             cell.imageV.kf.setImage(with: URL(string: model.url))
+            cell.imageV.kf.setImage(with: URL(string: model.url), placeholder:#imageLiteral(resourceName: "icon_cat") , options: nil, progressBlock: nil, completionHandler: { (img, error, type, url) in
+                LLog(img)
+            })
             return cell
         })
         
+        tableView.rx.modelSelected(HomeResult.self).subscribe { (event) in
+            if(event.element != nil){
+                LLog(event.element?.desc)
+            }
+            if(event.error != nil){
+                LLog(event.error.debugDescription)
+            }
+            }.disposed(by: disposeBag);
         
         // 设置代理
-        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+//        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
         
         tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.vmOutput?.requestCommond.onNext(true)
@@ -69,7 +75,6 @@ extension HomeVC
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.vmOutput?.requestCommond.onNext(false)
         })
-        
         
         let vmInput = HomeViewModel.Input(category: .welfare)
         let vmOutput = viewModel.transform(input: vmInput)
@@ -97,8 +102,3 @@ extension HomeVC
     }
 }
 
-extension HomeVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
