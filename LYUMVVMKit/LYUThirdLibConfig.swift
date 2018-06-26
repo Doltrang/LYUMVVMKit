@@ -42,13 +42,12 @@ extension AppDelegate
         
     }
     fileprivate func initRxSwift(){
-        #if  TRACE_RESOURCES && DEBUG
+       
         _ = Observable<Int>.interval(1, scheduler: MainScheduler.instance).subscribe({ (event) in
-            print("Resource count \(RxSwift.Resources.total)")
+            LLog("Resource count \(RxSwift.Resources.total)")
           
         })
-        
-        #endif
+       
         
     }
     

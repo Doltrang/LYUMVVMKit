@@ -51,9 +51,6 @@ extension HomeVC
             cell.descLabel.text = model.desc
             cell.sourceLabel.text = "来源:" + model.source + "类别:" +  model.type;
             cell.imageV.kf.setImage(with: URL(string: model.url))
-            cell.imageV.kf.setImage(with: URL(string: model.url), placeholder:#imageLiteral(resourceName: "icon_cat") , options: nil, progressBlock: nil, completionHandler: { (img, error, type, url) in
-                LLog(img)
-            })
             return cell
         })
         
@@ -66,6 +63,7 @@ extension HomeVC
             }
             }.disposed(by: disposeBag);
         
+   
         // 设置代理
 //        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
         
