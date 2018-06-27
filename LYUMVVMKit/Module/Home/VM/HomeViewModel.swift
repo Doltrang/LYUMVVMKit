@@ -13,7 +13,7 @@ import RxCocoa
 
 class HomeViewModel: BaseViewModel {
     // 存放着解析完成的模型数组
-    let models = Variable<[HomeResult]>([])
+    let models = BehaviorRelay<[HomeResult]>(value: [HomeResult]())
     // 记录当前的索引值
     var index: Int = 1
     
@@ -51,15 +51,17 @@ extension HomeViewModel:LYUViewModelType
             // 当models的值被改变时会调用
             return [HomeSection(items: models)]
             }.asDriver(onErrorJustReturn: [])
+        
         let output = HomeViewModelOutput(sections: sections)
         output.requestCommond.subscribe { (event) in
             if let isReloadData = event.element{
                 self.index = isReloadData ? 1 : self.index+1;
              
                 LLog("入参:category:\(input.category)==index:\(self.index)")
-                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
+                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 5, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
                     if(response.results.count > 0 ){
-                        self.models.value = isReloadData ? response.results : self.models.value + response.results;
+//                        self.models.value = isReloadData ? response.results : self.models.value + response.results;
+                        self.models.accept(isReloadData ? response.results : self.models.value + response.results)
                         output.refreshStatus.value = isReloadData ? .endHeaderRefresh : .endFooterRefresh
                     }else {
                         output.refreshStatus.value = .noMoreData

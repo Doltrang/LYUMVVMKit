@@ -30,6 +30,8 @@ class HomeVC: BaseViewController {
         setupUI();
         bindView()
         
+
+        
     }
 
 }
@@ -54,6 +56,7 @@ extension HomeVC
             return cell
         })
         
+        
         tableView.rx.modelSelected(HomeResult.self).subscribe { (event) in
             if(event.element != nil){
                 LLog(event.element?.desc)
@@ -62,6 +65,7 @@ extension HomeVC
                 LLog(event.error.debugDescription)
             }
             }.disposed(by: disposeBag);
+        
         
    
         // 设置代理

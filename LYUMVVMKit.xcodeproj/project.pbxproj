@@ -35,6 +35,7 @@
 		851747A720B7AB0F002CE67A /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851747A620B7AB0F002CE67A /* FileManager+Extension.swift */; };
 		851747B420B7BDD5002CE67A /* LYUCountDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851747B320B7BDD5002CE67A /* LYUCountDownBtn.swift */; };
 		8527AD6220E245F80090D185 /* LYURxSwiftOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527AD6120E245F80090D185 /* LYURxSwiftOperators.swift */; };
+		8527AD6C20E398AA0090D185 /* LYUHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527AD6B20E398AA0090D185 /* LYUHomeService.swift */; };
 		854D3D9E20A98CA900DA8326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3D9D20A98CA900DA8326 /* AppDelegate.swift */; };
 		854D3DA020A98CA900DA8326 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3D9F20A98CA900DA8326 /* ViewController.swift */; };
 		854D3DA320A98CA900DA8326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 854D3DA120A98CA900DA8326 /* Main.storyboard */; };
@@ -102,6 +103,7 @@
 		851747A620B7AB0F002CE67A /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		851747B320B7BDD5002CE67A /* LYUCountDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUCountDownBtn.swift; sourceTree = "<group>"; };
 		8527AD6120E245F80090D185 /* LYURxSwiftOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYURxSwiftOperators.swift; sourceTree = "<group>"; };
+		8527AD6B20E398AA0090D185 /* LYUHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUHomeService.swift; sourceTree = "<group>"; };
 		854D3D9A20A98CA900DA8326 /* LYUMVVMKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYUMVVMKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		854D3D9D20A98CA900DA8326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		854D3D9F20A98CA900DA8326 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,14 @@
 			path = LYUCountDownBtn;
 			sourceTree = "<group>";
 		};
+		8527AD6920E384A10090D185 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8527AD6B20E398AA0090D185 /* LYUHomeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		854D3D9120A98CA900DA8326 = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +405,7 @@
 		854D3DB020A990B500DA8326 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8527AD6920E384A10090D185 /* Service */,
 				61836CF820DDD96C0002BB11 /* APIManager */,
 				61836CE320DD35770002BB11 /* Base */,
 				8517478E20B659DA002CE67A /* Protocol */,
@@ -894,6 +905,7 @@
 				854D3E0C20A9934C00DA8326 /* LYUMacros.swift in Sources */,
 				6118C8E420B84B0900E3B937 /* LYUNotificationCenter.swift in Sources */,
 				61836CED20DD3F6F0002BB11 /* UIView+Core.swift in Sources */,
+				8527AD6C20E398AA0090D185 /* LYUHomeService.swift in Sources */,
 				617456AC20DE99E3005FF7FD /* HomeViewCell.swift in Sources */,
 				61836CE720DD381E0002BB11 /* BaseViewController.swift in Sources */,
 				854D3E0420A9919400DA8326 /* UIViewController+Slide.swift in Sources */,
