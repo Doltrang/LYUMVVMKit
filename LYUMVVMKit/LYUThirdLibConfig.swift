@@ -19,7 +19,12 @@ import IQKeyboardManagerSwift
 
 extension AppDelegate
 {
-    
+    /// 初始化配置第三方信息
+    func initThirdConfig(){
+        initRxSwift()
+        initHUDStyle();
+        initKeyboardManager()
+    }
     //MARK:-初始化显示弹框
     fileprivate  func initHUDStyle(){
         SVProgressHUD.setBackgroundColor(UIColor.white);
@@ -36,7 +41,15 @@ extension AppDelegate
         IQKeyboardManager.sharedManager().enableAutoToolbar = false;
         
     }
-    
+    fileprivate func initRxSwift(){
+       
+        _ = Observable<Int>.interval(1, scheduler: MainScheduler.instance).subscribe({ (event) in
+            LLog("Resource count \(RxSwift.Resources.total)")
+          
+        })
+       
+        
+    }
     
 //    fileprivate func initToastStyle(){
 //

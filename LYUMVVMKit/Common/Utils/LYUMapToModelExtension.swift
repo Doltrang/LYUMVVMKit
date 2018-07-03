@@ -12,6 +12,36 @@ import Moya
 import HandyJSON
 
 
+enum LYUResponseResult {
+    case success(result:Response)
+    case failure(info:NSError)
+    case loading(message:String)
+}
+
+
+extension LYUResponseResult{
+    var isValid: Bool {
+        switch self {
+        case .success(result: _):
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var descr:String {
+        switch self {
+        case .success(result: _):
+            return "请求成功"
+        case .failure(info: let error):
+             return error.description
+        case .loading(message: let message):
+            return message
+        }
+    }
+}
+
+
 extension ObservableType where E == Response {
     public func mapModel<T: HandyJSON>(_ type: T.Type) -> Observable<T> {
         return flatMap { response -> Observable<T> in

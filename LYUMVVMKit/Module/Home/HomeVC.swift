@@ -25,28 +25,15 @@ class HomeVC: UIViewController {
     
     var vmOutput : HomeViewModel.Output?
     
-    var url:String = ""
-    var lastName:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI();
         bindView()
+
         
     }
 
-     init(_ url:String, lastName:String){
- 
-        self.url = url
-        self.lastName = lastName
-         super.init(nibName: nil, bundle: nil)
-    }
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
+
     
     
 }
@@ -72,8 +59,19 @@ extension HomeVC
         })
         
         
+        tableView.rx.modelSelected(HomeResult.self).subscribe { (event) in
+            if(event.element != nil){
+                LLog(event.element?.desc)
+            }
+            if(event.error != nil){
+                LLog(event.error.debugDescription)
+            }
+            }.disposed(by: disposeBag);
+        
+        
+   
         // 设置代理
-        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+//        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
         
         tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.vmOutput?.requestCommond.onNext(true)
@@ -81,7 +79,6 @@ extension HomeVC
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.vmOutput?.requestCommond.onNext(false)
         })
-        
         
         let vmInput = HomeViewModel.Input(category: .welfare)
         let vmOutput = viewModel.transform(input: vmInput)
@@ -109,8 +106,3 @@ extension HomeVC
     }
 }
 
-extension HomeVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
