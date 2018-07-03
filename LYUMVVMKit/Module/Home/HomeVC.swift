@@ -29,7 +29,6 @@ class HomeVC: BaseViewController {
         super.viewDidLoad()
         setupUI();
         bindView()
-        
 
         
     }

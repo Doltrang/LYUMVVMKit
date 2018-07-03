@@ -7,13 +7,23 @@
 //
 
 import UIKit
-
+import SnapKit
 class VideoVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let lab = UILabel()
+        self.view.addSubview(lab);
+        
+        lab.text = "213123123"
+        lab.backgroundColor = UIColor.red
+        lab.snp.makeConstraints { (make) in
+            make.width.greaterThanOrEqualTo("".textWidth(font: lab.font, height: FIT_WIDTH(80)))
+            make.height.equalTo(FIT_WIDTH(80));
+            make.center.equalTo(self.view);
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +32,6 @@ class VideoVC: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

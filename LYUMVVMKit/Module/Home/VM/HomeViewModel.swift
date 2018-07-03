@@ -13,7 +13,7 @@ import RxCocoa
 
 class HomeViewModel: BaseViewModel {
     // 存放着解析完成的模型数组
-    let models = BehaviorRelay<[HomeResult]>(value: [HomeResult]())
+  fileprivate let models = BehaviorRelay<[HomeResult]>(value: [HomeResult]())
     // 记录当前的索引值
     var index: Int = 1
     
@@ -37,7 +37,7 @@ extension HomeViewModel:LYUViewModelType
         // 外界通过该属性告诉viewModel加载数据（传入的值是为了标志是否重新加载）
         let requestCommond = PublishSubject<Bool>()
         // 告诉外界的tableView当前的刷新状态
-        let refreshStatus = Variable<LYURefreshStatus>(.none)
+        let refreshStatus = BehaviorRelay<LYURefreshStatus>(value: .none)
         init(sections: Driver<[HomeSection]>) {
             self.sections = sections
         }
@@ -60,11 +60,10 @@ extension HomeViewModel:LYUViewModelType
                 LLog("入参:category:\(input.category)==index:\(self.index)")
                 LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 5, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
                     if(response.results.count > 0 ){
-//                        self.models.value = isReloadData ? response.results : self.models.value + response.results;
                         self.models.accept(isReloadData ? response.results : self.models.value + response.results)
-                        output.refreshStatus.value = isReloadData ? .endHeaderRefresh : .endFooterRefresh
+                        output.refreshStatus.accept(isReloadData ? .endHeaderRefresh : .endFooterRefresh)
                     }else {
-                        output.refreshStatus.value = .noMoreData
+                        output.refreshStatus.accept(.noMoreData);
                     }
                 }, onError: { (error) in
                     LLog(error);
