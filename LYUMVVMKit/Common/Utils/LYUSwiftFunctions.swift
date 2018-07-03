@@ -9,7 +9,8 @@
 import Foundation
 
 struct LYUFunctions {
-    
+    /// http://itunes.apple.com/lookup?id=xxx
+//    UIPushBehavior
     /// EZSE: Returns app's name
     public static var appDisplayName: String? {
         if let bundleDisplayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String {

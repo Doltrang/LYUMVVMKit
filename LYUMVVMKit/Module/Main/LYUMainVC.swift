@@ -38,7 +38,8 @@ extension LYUMainVC{
         }
         
         //首页
-        let homepage = BaseNavigationController(rootViewController: HomeVC());
+        
+        let homepage = BaseNavigationController(rootViewController:HomeVC.init("-----", lastName: "--****--") );
         homepage.tabBarItem = ESTabBarItem.init(title: "首页", image: self.unselectedImages[0], selectedImage: self.selectedImages[0], tag: 0);
         
         
