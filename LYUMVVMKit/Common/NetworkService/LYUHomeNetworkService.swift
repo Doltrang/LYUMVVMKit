@@ -14,24 +14,16 @@ import RxSwift
 
 
 class LYUHomeNetworkService {
-    static let shareService:LYUHomeNetworkService = {
-        let service = LYUHomeNetworkService()
-        return service;
-    }()
+  
     
     
-//    func requestHomdeList<T: HandyJSON>(_ type: T.Type,apiInput:LYUHomeAPI) -> Observable<LYUResponseResult> {
-//        
-//        LYUHomeNetTool.rx.request(apiInput).asObservable().mapModel(type).subscribe(onNext: { (response) in
-//           
-//        }, onError: { (error) in
-//            
-//        }, onCompleted: {
-//            
-//        }, onDisposed: nil).disposed(by: disposeBag);
-//
-//        return 
-//    }
+   class func requestHomdeList(apiInput:LYUHomeAPI) -> Observable<LYUResponseResult> {
+        
+        return LYUHomeNetTool.rx.request(apiInput).asObservable().map({ (response) in
+            return LYUResponseResult.success(result: response)
+        }).startWith(LYUResponseResult.loading(message: "正在加载中..."))
+            .catchErrorJustReturn(LYUResponseResult.failure(info: NSError(domain: "", code: 500, userInfo: nil)));
+    }
     
     
     

@@ -52,7 +52,7 @@ class LYUDynamicView: UIView {
     fileprivate var _pushBehavior:UIPushBehavior = {
         let pushB = UIPushBehavior(items: [UIDynamicItem](), mode: .continuous);
         pushB.pushDirection =  CGVector(dx: 1, dy: 0);
-        pushB.magnitude = 1;
+        pushB.magnitude = 0.1;
         return pushB;
     }()
     
