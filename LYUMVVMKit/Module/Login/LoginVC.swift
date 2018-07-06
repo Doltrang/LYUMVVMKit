@@ -81,7 +81,7 @@ extension LoginVC
      let vmInput =   LoginVM.Input(username: self.accountTF.rx.text.orEmpty.asDriver(), password: self.pwdTF.rx.text.orEmpty.asDriver(), repeatedPassword: self.confirmPwdTF.rx.text.orEmpty.asDriver(), loginTaps: self.loginBtn.rx.tap.asSignal());
         
 
-        vmInput.validatedUsername.drive(self.desLab.rx.validationResult).disposed(by: disposeBag);
+       
         
         
         
