@@ -20,7 +20,9 @@ class HomeVC: UIViewController {
     let tableView = UITableView().then {
         $0.backgroundColor = UIColor.white
         $0.register(cellType: HomeViewCell.self)
-        $0.rowHeight = HomeViewCell.cellHeigh()
+        $0.estimatedRowHeight = FIT_WIDTH(100)
+        $0.rowHeight = UITableViewAutomaticDimension;
+        
     }
     
     var vmOutput : HomeViewModel.Output?
@@ -69,6 +71,20 @@ extension HomeVC
             }.disposed(by: disposeBag);
         
         
+//        tableView.rx.itemSelected.subscribe { (event) in
+//            if(event.element != nil){
+//                let index = event.element!;
+//                let cell = self.tableView.cellForRow(at: index) as! HomeViewCell;
+//                cell.imageV.snp.updateConstraints({ (make) in
+//                    make.height.equalTo(FIT_WIDTH(600))
+//            
+//                })
+//                
+//                
+//                LLog(cell)
+//                self.tableView.reloadData();
+//            }
+//            }.disposed(by: disposeBag);
    
         // 设置代理
 //        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)

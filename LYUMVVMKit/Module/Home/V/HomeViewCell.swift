@@ -34,6 +34,7 @@ class HomeViewCell: UITableViewCell,Reusable {
         self.selectionStyle = .none
         self.setupUI();
     }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -50,9 +51,10 @@ extension HomeViewCell{
         
         self.imageV.snp.makeConstraints { (make) in
             make.leftMargin.equalTo(self.contentView.snp.left);
-            make.centerY.equalTo(self.contentView.snp.centerY)
-            make.width.equalTo(FIT_WIDTH(260));
-            make.height.equalTo(FIT_WIDTH(260));
+            make.top.equalTo(self.contentView.snp.top);
+            make.width.equalTo(FIT_WIDTH(300));
+            make.height.equalTo(FIT_WIDTH(300))
+      make.bottom.equalTo(self.contentView.snp.bottom).offset(FIT_WIDTH(-30)).offset(FIT_WIDTH(20)).priority(100)
         }
         
         self.descLabel.snp.makeConstraints { (make) in
@@ -61,7 +63,7 @@ extension HomeViewCell{
             make.height.equalTo(FIT_WIDTH(40));
             make.top.equalTo(self.imageV.snp.top);
         }
-        
+
         self.sourceLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.descLabel)
             make.width.equalTo(FIT_WIDTH(300))
