@@ -41,8 +41,13 @@ class LYUContentLayoutBtn: UIButton {
         let size = self.bounds.size;
         switch self.style {
         case .ImageTop:
+            
             self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: 0, width: self.imgSize.width, height: self.imgSize.height);
-            self.titleLabel?.frame = CGRect(x: 0, y: self.imgSize.height + space, width: size.width, height: size.height - self.imgSize.height - self.space);
+            // 计算文本的高度
+            self.titleLabel?.frame = CGRect(x: 0, y: self.imgSize.height + space, width: size.width, height:size.height - self.imgSize.height - self.space);
+            self.titleLabel?.sizeToFit();
+            self.titleLabel?.bounds.size.width = size.width;
+            self.titleLabel?.frame.origin.x = 0;
         case .ImageBottom:
              self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: size.height - self.imgSize.height, width: self.imgSize.width, height: self.imgSize.height);
              self.titleLabel?.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height - self.space - self.imgSize.height);

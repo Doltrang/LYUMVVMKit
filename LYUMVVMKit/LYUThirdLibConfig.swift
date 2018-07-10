@@ -21,7 +21,7 @@ extension AppDelegate
 {
     /// 初始化配置第三方信息
     func initThirdConfig(){
-        initRxSwift()
+//        initRxSwift()
         initHUDStyle();
         initKeyboardManager()
     }

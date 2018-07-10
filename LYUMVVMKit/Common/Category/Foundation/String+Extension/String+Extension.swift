@@ -42,11 +42,17 @@ extension String{
     ///   - width: 宽度
     /// - Returns: 高度
     func textHeight(font:UIFont,width:CGFloat)->CGFloat{
+       let style = NSMutableParagraphStyle()
+//        style.lineBreakMode = .byClipping;
+//        style.maximumLineHeight = 1;
         
-        let height =   self.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options:  NSStringDrawingOptions(rawValue: NSStringDrawingOptions.usesDeviceMetrics.rawValue |   NSStringDrawingOptions.usesFontLeading.rawValue |    NSStringDrawingOptions.usesLineFragmentOrigin.rawValue |
-            NSStringDrawingOptions.truncatesLastVisibleLine.rawValue
-        ), attributes: [NSAttributedStringKey.font:font], context: nil).size.height;
-        return height;
+        let height =   self.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options:  NSStringDrawingOptions(rawValue:
+            NSStringDrawingOptions.usesDeviceMetrics.rawValue |
+            NSStringDrawingOptions.usesFontLeading.rawValue |
+                NSStringDrawingOptions.usesLineFragmentOrigin.rawValue
+//            NSStringDrawingOptions.truncatesLastVisibleLine.rawValue
+        ), attributes: [NSAttributedStringKey.font:font,NSAttributedStringKey.paragraphStyle:style], context: nil).size.height;
+        return ceil(height);
     }
     
     /// 返回文本的宽度
@@ -60,7 +66,7 @@ extension String{
         let width =   self.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: NSStringDrawingOptions(rawValue:  NSStringDrawingOptions.usesFontLeading.rawValue |    NSStringDrawingOptions.usesLineFragmentOrigin.rawValue |
             NSStringDrawingOptions.truncatesLastVisibleLine.rawValue)
             , attributes: [NSAttributedStringKey.font:font], context: nil).size.width;
-        return width;
+        return ceil(width);
     }
     
     
