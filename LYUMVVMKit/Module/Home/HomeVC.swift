@@ -46,7 +46,7 @@ extension HomeVC
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(view)
-            make.top.equalTo(view.snp.top).offset(20);
+            make.top.equalTo(view.snp.top);
         }
     }
     

@@ -112,16 +112,31 @@ extension String{
     }
     
     /// parse url eg:id=1&name=k
+    /// 获得参数
     var toUrlParams:[String:String]{
         get{
             var params = [String:String]()
-            self.split(separator: "&").forEach { (index) in
-                let tmp =  index.split(separator: "=")
-                if(tmp.count > 1){
-                    params[String(tmp[0])] = String(tmp[1])
+            let url = URL(string: self);
+            if let url = url, let paramstring = url.query{
+                paramstring.split(separator: "&").forEach { (index) in
+                    let tmp =  index.split(separator: "=")
+                    if(tmp.count > 1){
+                        params[String(tmp[0])] = String(tmp[1])
+                    }
                 }
             }
             return params;
+        }
+    }
+    /// 获得host
+    var toUrlHost:String {
+        get{
+            let url = URL(string: self);
+            var host = "";
+            if let url = url, let hoststr = url.host{
+                host = hoststr;
+            }
+            return host;
         }
     }
     
@@ -136,6 +151,33 @@ extension String{
         }
         
     }
+    
+    
+    var currentClass:AnyClass? {
+        get{
+            
+            if  let appName: String = Bundle.main.infoDictionary!["CFBundleName"] as? String{
+                return NSClassFromString("\(appName).\(self)")
+            }
+            return nil;
+        }
+    }
+    
+    
+    func convertToClass<T>(_ type:T.Type) -> T.Type?{
+        
+        if  let appName: String = Bundle.main.infoDictionary!["CFBundleName"] as? String{
+            
+            if let appClass = NSClassFromString("\(appName).\(self)") {
+                return appClass as? T.Type;
+            }
+            return nil;
+            
+        }
+        return nil;
+        
+    }
+    
     
 }
 
