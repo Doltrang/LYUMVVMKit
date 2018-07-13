@@ -67,8 +67,9 @@ class LYURouter: NSObject {
     static var shareRouter:LYURouter = {
         let router = LYURouter();
         /// 初始化挂钩函数
-        hookPushVC();
-        hookPopVC()
+//        hookPushVC();
+//        hookPopVC()
+        
         return router;
     }()
     
@@ -103,7 +104,7 @@ class LYURouter: NSObject {
                 }
             }
         }
-        /// 触发回调的工作
+        /// 触发回调
         if(complete != nil){
             complete!();
         }

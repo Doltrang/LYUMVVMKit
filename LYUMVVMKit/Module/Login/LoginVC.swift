@@ -35,13 +35,18 @@ class LoginVC: UIViewController {
         let btn = UIButton()
         return btn;
     }()
+    
+    let viewModel = LoginVM()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "登录"
         setupUI()/// 初始化UI
         bindView()/// 绑定视图的业务逻辑
     }
     
-    let viewModel = LoginVM()
+    
     
 }
 

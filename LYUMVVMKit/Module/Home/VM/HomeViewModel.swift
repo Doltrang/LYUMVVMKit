@@ -77,7 +77,7 @@ extension HomeViewModel:LYUViewModelType
                 
                 
                 LLog("入参:category:\(input.category)==index:\(self.index)")
-                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 5, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
+                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
                     if(response.results.count > 0 ){
                         self.models.accept(isReloadData ? response.results : self.models.value + response.results)
                         output.refreshStatus.accept(isReloadData ? .endHeaderRefresh : .endFooterRefresh)

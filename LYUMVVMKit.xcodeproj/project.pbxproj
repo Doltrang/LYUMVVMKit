@@ -84,6 +84,7 @@
 		85FCAD1E20F75A9300BDC10D /* LYUWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD1D20F75A9300BDC10D /* LYUWebViewController.swift */; };
 		85FCAD2220F75AA800BDC10D /* LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */; };
 		85FCAD2320F75AA800BDC10D /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */; };
+		85FCAD2820F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +169,7 @@
 		85FCAD1D20F75A9300BDC10D /* LYUWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUWebViewController.swift; sourceTree = "<group>"; };
 		85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUNavigationBar.swift; sourceTree = "<group>"; };
 		85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helper.swift"; sourceTree = "<group>"; };
+		85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LYUNavigationBar.swift"; sourceTree = "<group>"; };
 		880EC322FC07882EC6533F5A /* Pods-LYUMVVMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYUMVVMKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYUMVVMKit/Pods-LYUMVVMKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -843,6 +845,7 @@
 			children = (
 				85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */,
 				85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */,
+				85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */,
 			);
 			path = LYUNavigationBar;
 			sourceTree = "<group>";
@@ -1016,6 +1019,7 @@
 				854D3DA020A98CA900DA8326 /* ViewController.swift in Sources */,
 				85C2C4D320EB70520056ED34 /* LYULoginNetworkService.swift in Sources */,
 				854D3E0320A9919400DA8326 /* UIView+Snapshot.swift in Sources */,
+				85FCAD2820F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift in Sources */,
 				61836CF720DDD6760002BB11 /* LoginVM.swift in Sources */,
 				854D3DF020A9919400DA8326 /* DispatchQueue+Once.swift in Sources */,
 				854D3E0120A9919400DA8326 /* UIView+BlockGesture.swift in Sources */,

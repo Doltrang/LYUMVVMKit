@@ -81,4 +81,31 @@ extension UIColor {
         UIGraphicsEndImageContext()
         return theImage ?? UIImage()
     }
+    
+    
+    
+    func toColor(toColor:UIColor,percent:CGFloat) -> UIColor{
+        var fromRed:CGFloat = 0;
+        var fromGreen:CGFloat = 0;
+        var fromBlue:CGFloat = 0;
+        var fromAlpha:CGFloat = 0;
+        self.getRed(&fromRed, green: &fromGreen, blue: &fromBlue, alpha: &fromAlpha);
+        
+        
+        var toRed:CGFloat = 0;
+        var toGreen:CGFloat = 0;
+        var toBlue:CGFloat = 0;
+        var toAlpha:CGFloat = 0;
+        toColor.getRed(&toRed, green: &toGreen, blue: &toBlue, alpha: &toAlpha);
+        return UIColor(red: fromRed+(toRed-fromRed)*percent, green: fromGreen+(toGreen - fromGreen)*percent, blue: fromBlue+(toBlue - fromBlue)*percent, alpha: fromAlpha+(toAlpha - fromAlpha)*percent)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
