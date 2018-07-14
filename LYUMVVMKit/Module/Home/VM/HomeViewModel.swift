@@ -53,12 +53,31 @@ extension HomeViewModel:LYUViewModelType
             }.asDriver(onErrorJustReturn: [])
         
         let output = HomeViewModelOutput(sections: sections)
+        
+        
+        
         output.requestCommond.subscribe { (event) in
             if let isReloadData = event.element{
                 self.index = isReloadData ? 1 : self.index+1;
              
+                
+//                LYUHomeNetworkService.requestHomdeList(apiInput: LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).subscribe({ (event) in
+//                    if(event.element != nil){
+//                        LLog("请求成功")
+//                        switch (event.element!){
+//                        case .success(result: let response):
+//                            let model =    response.mapModel(HomeM.self);
+//                            LLog(model.results);
+//                            break;
+//                        default :
+//                            break;
+//                        }
+//                    } 
+//                }).disposed(by: disposeBag);
+                
+                
                 LLog("入参:category:\(input.category)==index:\(self.index)")
-                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 5, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
+                LYUHomeNetTool.rx.request(LYUHomeAPI.data(type: input.category, size: 20, index: self.index)).asObservable().mapModel(HomeM.self).subscribe(onNext: { (response) in
                     if(response.results.count > 0 ){
                         self.models.accept(isReloadData ? response.results : self.models.value + response.results)
                         output.refreshStatus.accept(isReloadData ? .endHeaderRefresh : .endFooterRefresh)

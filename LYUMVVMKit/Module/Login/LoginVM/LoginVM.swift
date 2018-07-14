@@ -51,6 +51,13 @@ extension LoginVM:LYUViewModelType
             validatedUsername = username.flatMapLatest({ (username) in
                 return LYULoginService.validateUsername(username).asDriver(onErrorJustReturn: .failed(message: "服务器发生错误"))
             })
+
+           validatedUsername.asObservable().subscribe { (event) in
+                /// 监听输入的结果
+                LLog(event);
+                }.disposed(by: disposeBag);
+            
+            
             
             validatedPassword = password.map({ (password) in
                 return LYULoginService.validatePassword(password);

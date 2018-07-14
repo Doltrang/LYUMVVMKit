@@ -16,9 +16,8 @@ class MineVC: BaseViewController {
        let v = LYUDynamicView(frame: CGRect.zero)
         view.addSubview(v)
         v.snp.makeConstraints { (make) in
-            make.width.equalTo(FIT_WIDTH(700));
-            make.height.equalTo(FIT_WIDTH(700));
             make.centerX.centerY.equalTo(self.view);
+            make.width.height.equalToSuperview()
         }
         v.backgroundColor =  UIColor.red
         

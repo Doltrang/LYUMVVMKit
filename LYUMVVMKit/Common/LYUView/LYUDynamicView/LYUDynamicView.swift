@@ -35,7 +35,8 @@ class LYUDynamicView: UIView {
      //重力 行为
     fileprivate var _gravityBehavior:UIGravityBehavior = {
         let graB = UIGravityBehavior()
-        graB.gravityDirection = CGVector(dx: 0, dy: -0.5);
+        graB.gravityDirection = CGVector(dx: 0, dy: 0.5);
+        graB.magnitude = 10;
         return graB;
     }()
     
@@ -50,9 +51,11 @@ class LYUDynamicView: UIView {
     
     /// 推动行为
     fileprivate var _pushBehavior:UIPushBehavior = {
-        let pushB = UIPushBehavior(items: [UIDynamicItem](), mode: .continuous);
-        pushB.pushDirection =  CGVector(dx: 1, dy: 0);
-        pushB.magnitude = 1;
+        /// //UIPushBehaviorModeInstantaneous  力是瞬时的
+        let pushB = UIPushBehavior(items: [UIDynamicItem](), mode: .instantaneous);
+        pushB.pushDirection =  CGVector(dx: 0, dy: -0.5);
+        pushB.magnitude = 2;
+        pushB.active = true;
         return pushB;
     }()
     
@@ -74,8 +77,8 @@ class LYUDynamicView: UIView {
         let v = self.viewWithTag(100) as! UIView;
        
          _pushBehavior.addItem(v)
-         _dynamicAnimator.addBehavior(_pushBehavior);
-        
+//         _dynamicAnimator.addBehavior(_pushBehavior);
+        LLog("触发对调")
     }
 }
 
@@ -86,10 +89,11 @@ extension LYUDynamicView{
         /// 添加物理仿真行为
         _dynamicAnimator.addBehavior(_dynamicItemBehavior)
         /// 添加重力行为
-        _dynamicAnimator.addBehavior(_gravityBehavior);
+//        _dynamicAnimator.addBehavior(_gravityBehavior);
         /// 添加碰撞行为
         _dynamicAnimator.addBehavior(_collisionBehavior);
-        
+        /// 添加推力行为
+        _dynamicAnimator.addBehavior(_pushBehavior);
        
     }
     
@@ -100,9 +104,10 @@ extension LYUDynamicView{
         tapView.backgroundColor = UIColor.gray
         tapView.tag = 100;
         self.addSubview(tapView);
-        _gravityBehavior.addItem(tapView);
+//        _gravityBehavior.addItem(tapView);
         _collisionBehavior.addItem(tapView)
-       
+        _pushBehavior.addItem(tapView)
+        
         
     }
 }

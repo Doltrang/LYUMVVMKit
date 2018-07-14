@@ -12,16 +12,6 @@ class VideoVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let lab = UILabel()
-        self.view.addSubview(lab);
-        
-        lab.text = "213123123"
-        lab.backgroundColor = UIColor.red
-        lab.snp.makeConstraints { (make) in
-            make.width.greaterThanOrEqualTo("".textWidth(font: lab.font, height: FIT_WIDTH(80)))
-            make.height.equalTo(FIT_WIDTH(80));
-            make.center.equalTo(self.view);
-        }
         
         
     }

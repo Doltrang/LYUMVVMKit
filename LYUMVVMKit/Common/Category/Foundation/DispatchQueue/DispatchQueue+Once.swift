@@ -46,7 +46,12 @@ public extension DispatchQueue {
     
     /// EZSE: Submits a block for asynchronous execution on the main queue
     public static func runThisInMainThread(_ block: @escaping () -> Void) {
-        DispatchQueue.main.async(execute: block)
+        if(Thread.current.isMainThread){
+            block()
+        }else{
+          DispatchQueue.main.async(execute: block)
+        }
+       
     }
     
     /// EZSE: Runs in Default priority queue

@@ -35,13 +35,18 @@ class LoginVC: UIViewController {
         let btn = UIButton()
         return btn;
     }()
+    
+    let viewModel = LoginVM()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "登录"
         setupUI()/// 初始化UI
         bindView()/// 绑定视图的业务逻辑
     }
     
-    let viewModel = LoginVM()
+    
     
 }
 
@@ -81,7 +86,7 @@ extension LoginVC
      let vmInput =   LoginVM.Input(username: self.accountTF.rx.text.orEmpty.asDriver(), password: self.pwdTF.rx.text.orEmpty.asDriver(), repeatedPassword: self.confirmPwdTF.rx.text.orEmpty.asDriver(), loginTaps: self.loginBtn.rx.tap.asSignal());
         
 
-        vmInput.validatedUsername.drive(self.desLab.rx.validationResult).disposed(by: disposeBag);
+       
         
         
         

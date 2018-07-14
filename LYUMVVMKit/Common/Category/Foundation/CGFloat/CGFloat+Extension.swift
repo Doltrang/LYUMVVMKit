@@ -29,6 +29,9 @@ extension CGFloat {
         self = (.pi * self) / 180.0
     }
     
+    public func toAlpha(toAlpha:CGFloat, percent:CGFloat) -> CGFloat {
+        return (self + (toAlpha - self)*percent);
+    }
     /// EZSE: Converts angle degrees to radians.
     public static func degreesToRadians(_ angle: CGFloat) -> CGFloat {
         return (.pi * angle) / 180.0

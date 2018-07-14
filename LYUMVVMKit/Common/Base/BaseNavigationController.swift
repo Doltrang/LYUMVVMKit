@@ -52,7 +52,7 @@ extension BaseNavigationController{
     fileprivate func setUpNavigationBarAppearance(){
         
         let navigationBarAppearance = UINavigationBar.appearance();
-        let backgroundImage = UIColor.white.trans2Image();
+        let backgroundImage = UIColor.blue.trans2Image();
         
         let shadow = NSShadow();
         shadow.shadowColor = UIColor.clear;
@@ -65,7 +65,7 @@ extension BaseNavigationController{
             NSAttributedStringKey.shadow:shadow
         ];
         //        navigationBarAppearance.tintColor = UIColor.white
-        navigationBarAppearance.tintColor = UIColor.white;
+        navigationBarAppearance.tintColor = UIColor.blue;
         navigationBarAppearance.setBackgroundImage(backgroundImage, for: .default);
         navigationBarAppearance.titleTextAttributes = textAttributes as? [NSAttributedStringKey : Any] ;
         

@@ -42,11 +42,17 @@ extension String{
     ///   - width: 宽度
     /// - Returns: 高度
     func textHeight(font:UIFont,width:CGFloat)->CGFloat{
+       let style = NSMutableParagraphStyle()
+//        style.lineBreakMode = .byClipping;
+//        style.maximumLineHeight = 1;
         
-        let height =   self.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options:  NSStringDrawingOptions(rawValue: NSStringDrawingOptions.usesDeviceMetrics.rawValue |   NSStringDrawingOptions.usesFontLeading.rawValue |    NSStringDrawingOptions.usesLineFragmentOrigin.rawValue |
-            NSStringDrawingOptions.truncatesLastVisibleLine.rawValue
-        ), attributes: [NSAttributedStringKey.font:font], context: nil).size.height;
-        return height;
+        let height =   self.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options:  NSStringDrawingOptions(rawValue:
+            NSStringDrawingOptions.usesDeviceMetrics.rawValue |
+            NSStringDrawingOptions.usesFontLeading.rawValue |
+                NSStringDrawingOptions.usesLineFragmentOrigin.rawValue
+//            NSStringDrawingOptions.truncatesLastVisibleLine.rawValue
+        ), attributes: [NSAttributedStringKey.font:font,NSAttributedStringKey.paragraphStyle:style], context: nil).size.height;
+        return ceil(height);
     }
     
     /// 返回文本的宽度
@@ -60,7 +66,7 @@ extension String{
         let width =   self.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: NSStringDrawingOptions(rawValue:  NSStringDrawingOptions.usesFontLeading.rawValue |    NSStringDrawingOptions.usesLineFragmentOrigin.rawValue |
             NSStringDrawingOptions.truncatesLastVisibleLine.rawValue)
             , attributes: [NSAttributedStringKey.font:font], context: nil).size.width;
-        return width;
+        return ceil(width);
     }
     
     
@@ -106,16 +112,31 @@ extension String{
     }
     
     /// parse url eg:id=1&name=k
+    /// 获得参数
     var toUrlParams:[String:String]{
         get{
             var params = [String:String]()
-            self.split(separator: "&").forEach { (index) in
-                let tmp =  index.split(separator: "=")
-                if(tmp.count > 1){
-                    params[String(tmp[0])] = String(tmp[1])
+            let url = URL(string: self);
+            if let url = url, let paramstring = url.query{
+                paramstring.split(separator: "&").forEach { (index) in
+                    let tmp =  index.split(separator: "=")
+                    if(tmp.count > 1){
+                        params[String(tmp[0])] = String(tmp[1])
+                    }
                 }
             }
             return params;
+        }
+    }
+    /// 获得host
+    var toUrlHost:String {
+        get{
+            let url = URL(string: self);
+            var host = "";
+            if let url = url, let hoststr = url.host{
+                host = hoststr;
+            }
+            return host;
         }
     }
     
@@ -130,6 +151,33 @@ extension String{
         }
         
     }
+    
+    
+    var currentClass:AnyClass? {
+        get{
+            
+            if  let appName: String = Bundle.main.infoDictionary!["CFBundleName"] as? String{
+                return NSClassFromString("\(appName).\(self)")
+            }
+            return nil;
+        }
+    }
+    
+    
+    func convertToClass<T>(_ type:T.Type) -> T.Type?{
+        
+        if  let appName: String = Bundle.main.infoDictionary!["CFBundleName"] as? String{
+            
+            if let appClass = NSClassFromString("\(appName).\(self)") {
+                return appClass as? T.Type;
+            }
+            return nil;
+            
+        }
+        return nil;
+        
+    }
+    
     
 }
 
