@@ -14,11 +14,7 @@ import RxSwift
 
 
 class LYUHomeNetworkService {
-    static let shareService:LYUHomeNetworkService = {
-        let service = LYUHomeNetworkService()
-        return service;
-    }()
-    
+
     
 //    func requestHomdeList<T: HandyJSON>(_ type: T.Type,apiInput:LYUHomeAPI) -> Observable<LYUResponseResult> {
 //        
