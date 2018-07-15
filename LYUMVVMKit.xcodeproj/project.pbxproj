@@ -27,6 +27,7 @@
 		61836D1220DE1EF30002BB11 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D1120DE1EF30002BB11 /* MessageVC.swift */; };
 		61836D1620DE208C0002BB11 /* BackgroundContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D1420DE208C0002BB11 /* BackgroundContentView.swift */; };
 		61836D1720DE208C0002BB11 /* BasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61836D1520DE208C0002BB11 /* BasicContentView.swift */; };
+		619F8F5320F99DA000787055 /* UINavigationController+LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */; };
 		8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517478F20B659F4002CE67A /* LYUViewModelType.swift */; };
 		8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */; };
 		8517479820B68D0D002CE67A /* read_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8517479720B68D0D002CE67A /* read_share.png */; };
@@ -109,6 +110,7 @@
 		61836D1120DE1EF30002BB11 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		61836D1420DE208C0002BB11 /* BackgroundContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundContentView.swift; sourceTree = "<group>"; };
 		61836D1520DE208C0002BB11 /* BasicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicContentView.swift; sourceTree = "<group>"; };
+		619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+LYUNavigationBar.swift"; sourceTree = "<group>"; };
 		663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYUMVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8517478F20B659F4002CE67A /* LYUViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUViewModelType.swift; sourceTree = "<group>"; };
 		8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUContentLayoutBtn.swift; sourceTree = "<group>"; };
@@ -846,6 +848,7 @@
 				85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */,
 				85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */,
 				85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */,
+				619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */,
 			);
 			path = LYUNavigationBar;
 			sourceTree = "<group>";
@@ -1059,6 +1062,7 @@
 				61836CF420DDD5970002BB11 /* BaseModel.swift in Sources */,
 				61836CFD20DDDEBC0002BB11 /* BaseViewModel.swift in Sources */,
 				854D3E0220A9919400DA8326 /* UIView+Extension.swift in Sources */,
+				619F8F5320F99DA000787055 /* UINavigationController+LYUNavigationBar.swift in Sources */,
 				854D3DFD20A9919400DA8326 /* UIScrollView+Extension.swift in Sources */,
 				854D3D9E20A98CA900DA8326 /* AppDelegate.swift in Sources */,
 				854D3DF120A9919400DA8326 /* NSAttributedString+Extension.swift in Sources */,

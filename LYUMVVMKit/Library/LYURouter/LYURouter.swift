@@ -364,8 +364,7 @@ extension LYURouter
             options.transformStyle = vc.routerTransformStyle;
         }
         /// 配置vc
-        
-      
+     
         switch options.transformStyle {
         case .Push:
            return self._openWithPushStyle(vc: vc, options: options);
