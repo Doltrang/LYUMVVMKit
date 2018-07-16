@@ -72,6 +72,7 @@
 		854D3E0C20A9934C00DA8326 /* LYUMacros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0B20A9934C00DA8326 /* LYUMacros.swift */; };
 		854D3E1020A9942F00DA8326 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3E0F20A9942F00DA8326 /* LoginVC.swift */; };
 		858504BC20CE4D510039E57D /* LYULock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858504BB20CE4D510039E57D /* LYULock.swift */; };
+		85A931C820FC461B004C0FB5 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A931C720FC461B004C0FB5 /* UINavigationBar+Extension.swift */; };
 		85C2C4D320EB70520056ED34 /* LYULoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C2C4D220EB70520056ED34 /* LYULoginNetworkService.swift */; };
 		85C2C4D620EB7CC60056ED34 /* LYULoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C2C4D520EB7CC60056ED34 /* LYULoginService.swift */; };
 		85C2C4D920EB85E40056ED34 /* Rective+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C2C4D820EB85E40056ED34 /* Rective+Category.swift */; };
@@ -158,6 +159,7 @@
 		854D3E0B20A9934C00DA8326 /* LYUMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUMacros.swift; sourceTree = "<group>"; };
 		854D3E0F20A9942F00DA8326 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		858504BB20CE4D510039E57D /* LYULock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULock.swift; sourceTree = "<group>"; };
+		85A931C720FC461B004C0FB5 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		85C2C4D220EB70520056ED34 /* LYULoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULoginNetworkService.swift; sourceTree = "<group>"; };
 		85C2C4D520EB7CC60056ED34 /* LYULoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULoginService.swift; sourceTree = "<group>"; };
 		85C2C4D820EB85E40056ED34 /* Rective+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rective+Category.swift"; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 			children = (
 				85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */,
 				85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */,
+				85A931C720FC461B004C0FB5 /* UINavigationBar+Extension.swift */,
 				85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */,
 				619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */,
 			);
@@ -1068,6 +1071,7 @@
 				854D3DF120A9919400DA8326 /* NSAttributedString+Extension.swift in Sources */,
 				851747A720B7AB0F002CE67A /* FileManager+Extension.swift in Sources */,
 				61836D0320DE04C90002BB11 /* HomeM.swift in Sources */,
+				85A931C820FC461B004C0FB5 /* UINavigationBar+Extension.swift in Sources */,
 				61836D0920DE193D0002BB11 /* LYUMainVC.swift in Sources */,
 				85C2C4D920EB85E40056ED34 /* Rective+Category.swift in Sources */,
 				854D3DF620A9919400DA8326 /* Timer+WeakProxy.swift in Sources */,

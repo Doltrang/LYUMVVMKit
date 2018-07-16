@@ -137,6 +137,13 @@ class LYUNavigationBarConfig: UIView {
     }
 
     
+
+    
+}
+
+// MARK:基础判断设置属性以及高度等
+extension LYUNavigationBarConfig
+{
     /// 是否是iPhoneX
     static var isIphoneX:Bool = {
         var systemInfo = utsname()
