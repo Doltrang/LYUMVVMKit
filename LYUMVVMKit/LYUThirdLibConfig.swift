@@ -24,7 +24,7 @@ extension AppDelegate
 //        initRxSwift()
         initHUDStyle();
         initKeyboardManager()
-        initSwizzledMethod();
+//        initSwizzledMethod();
     }
     //MARK:-初始化显示弹框
     fileprivate  func initHUDStyle(){
@@ -67,6 +67,7 @@ extension AppDelegate
     
     fileprivate func initSwizzledMethod(){
         UINavigationBar.loadSwizzledMethod();
+        UINavigationController.loadSwizzledMethod();
     }
 }
 

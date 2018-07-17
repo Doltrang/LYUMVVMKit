@@ -81,6 +81,7 @@ extension HomeViewModel:LYUViewModelType
                     if(response.results.count > 0 ){
                         self.models.accept(isReloadData ? response.results : self.models.value + response.results)
                         output.refreshStatus.accept(isReloadData ? .endHeaderRefresh : .endFooterRefresh)
+                        
                     }else {
                         output.refreshStatus.accept(.noMoreData);
                     }

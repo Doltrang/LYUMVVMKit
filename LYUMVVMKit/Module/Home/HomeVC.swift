@@ -13,7 +13,7 @@ import NSObject_Rx
 import Reusable
 import Kingfisher
 
-class HomeVC: UIViewController {
+class HomeVC: BaseViewController {
 
     let viewModel = HomeViewModel()
     
@@ -37,7 +37,6 @@ class HomeVC: UIViewController {
 
 
     
-    
 }
 
 extension HomeVC
@@ -57,6 +56,7 @@ extension HomeVC
             cell.descLabel.text = model.desc
             cell.sourceLabel.text = "来源:" + model.source + "类别:" +  model.type;
             cell.imageV.kf.setImage(with: URL(string: model.url))
+         
             return cell
         })
         
@@ -107,6 +107,7 @@ extension HomeVC
                 self?.tableView.mj_header.beginRefreshing()
             case .endHeaderRefresh:
                 self?.tableView.mj_header.endRefreshing()
+                 self?.tableView.mj_footer.endRefreshing()
             case .beingFooterRefresh:
                 self?.tableView.mj_footer.beginRefreshing()
             case .endFooterRefresh:

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension UINavigationBar{
+extension UINavigationBar:UINavigationBarDelegate{
     
     private struct  AssociatedKeys{
         static var kLYUBackgroundViewKey = "kLYUBackgroundViewKey"
@@ -143,7 +143,9 @@ extension UINavigationBar{
         
         DispatchQueue.once(token: "loadSwizzledMethodUINavigationBar") {
        let sel =     #selector(setter: UINavigationBar.titleTextAttributes)
-            UINavigationBar.swizzleMethod(originalSelector: sel, swizzledSelector: #selector(lyu_setTitleTextAttributes));
+       UINavigationBar.swizzleMethod(originalSelector: sel, swizzledSelector: #selector(lyu_setTitleTextAttributes));
+        
+        
         }
         
     }

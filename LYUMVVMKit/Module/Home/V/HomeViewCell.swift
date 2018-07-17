@@ -13,6 +13,9 @@ class HomeViewCell: UITableViewCell,Reusable {
 
     var imageV:UIImageView = {
         let img = UIImageView();
+        img.layer.masksToBounds = true;
+        img.layer.cornerRadius = FIT_WIDTH(150);
+        img.backgroundColor = UIColor.red
         return img;
     }()
     
@@ -20,6 +23,8 @@ class HomeViewCell: UITableViewCell,Reusable {
          let lab = UILabel()
         lab.font = FONT(24);
         lab.textColor = UIColor.blue
+        lab.layer.masksToBounds = true;
+        lab.layer.cornerRadius = FIT_WIDTH(10);
         return lab;
     }()
     
@@ -71,6 +76,7 @@ extension HomeViewCell{
             make.top.equalTo(self.descLabel.snp.bottom).offset(FIT_WIDTH(40))
         }
         
+//        self.imageV.addRoundedCorners(radii: CGSize(width: 100, height: 100), rect: CGRect(x: 0, y: 0, width: FIT_WIDTH(300), height: FIT_WIDTH(300)));
     
     }
 }

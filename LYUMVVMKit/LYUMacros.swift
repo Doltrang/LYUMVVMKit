@@ -20,7 +20,6 @@ let kScreenW = UIScreen.main.bounds.width
 /// 计算布局属性 以750为基础  实现百分比布局
 let FIT_WIDTH : (CGFloat)->CGFloat = { f in f/750.0*kScreenW }
 let FIT_Height : (CGFloat)->CGFloat = { f in f/1334.0*kScreenH}
-
 func M_RECT(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat)->CGRect{
     return CGRect(x: x, y: y, width: w, height: h);
 }

@@ -107,9 +107,20 @@ extension UINavigationController{
     static func loadSwizzledMethod(){
         DispatchQueue.once(token: "UINavigationController_LYUNavigationBar_loadSwizzledMethod") {
            
-            let _updateInteractiveTransition = Selector("update(_ :)");
+            let _updateInteractiveTransition = Selector("_update(_ :)");
 //                #selector("update(_ :)".toSelector);
             UINavigationController.swizzleMethod(originalSelector: _updateInteractiveTransition, swizzledSelector: #selector(lyu_updateInteractiveTransition(_:)));
+            
+            /// exchange pushViewController
+            UINavigationController.swizzleMethod(originalSelector: #selector(UINavigationController.pushViewController(_:animated:)), swizzledSelector: #selector(lyu_pushViewController(_:animated:)));
+            
+           ///exchange popToViewController
+            UINavigationController.swizzleMethod(originalSelector: #selector(UINavigationController.popToViewController(_:animated:)), swizzledSelector: #selector(lyu_popToViewController(_:animated:)));
+            
+            
+            ///exchange popToRootViewControllerAnimated
+            UINavigationController.swizzleMethod(originalSelector: #selector(UINavigationController.popToRootViewController(animated:)), swizzledSelector: #selector(lyu_popToRootViewController(animated:)));
+            
             
         }
         
@@ -119,8 +130,78 @@ extension UINavigationController{
     
     
     @objc func lyu_updateInteractiveTransition(_ percentComplete:CGFloat){
+        let fromVC = self.topViewController?.transitionCoordinator?.viewController(forKey: .from);
+        let toVC = self.topViewController?.transitionCoordinator?.viewController(forKey: .to);
+        self.updateNavigationBar(fromVC: fromVC!, toVC: toVC!, progress: percentComplete);
+        self.lyu_updateInteractiveTransition(percentComplete)
+    }
+    
+    @objc func lyu_pushViewController(_ viewController: UIViewController, animated: Bool){
         
     }
+    
+    @objc func lyu_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]?{
+      self.setNeedsNavigationBarUpdateForTitleColor(titleColor: viewController.navBarTitleColor)
+        self.setNeedsNavigationBarUpdateForTintColor(tintColor: viewController.navBarTitleColor)
+        var  displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay));
+        
+        displayLink?.add(to: RunLoop.main, forMode: .commonModes);
+        CATransaction.setCompletionBlock {
+            displayLink?.invalidate()
+            displayLink = nil
+            UINavigationController.lyuPopDisplayCount = 0;
+        };
+        
+        
+        CATransaction.setAnimationDuration(UINavigationController.lyuPopDuration);
+        CATransaction.begin()
+        let vcs = self.lyu_popToViewController(viewController, animated: animated);
+        return vcs;
+        
+    }
+    
+    @objc func lyu_popToRootViewController(animated: Bool) -> [UIViewController]? {
+        var  displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay));
+        
+        displayLink?.add(to: RunLoop.main, forMode: .commonModes);
+        CATransaction.setCompletionBlock {
+            displayLink?.invalidate()
+            displayLink = nil
+            UINavigationController.lyuPopDisplayCount = 0;
+        };
+        
+        
+        CATransaction.setAnimationDuration(UINavigationController.lyuPopDuration);
+        CATransaction.begin()
+        let vcs = self.lyu_popToRootViewController(animated: animated)
+        return vcs;
+    }
+   
+    
+    @objc fileprivate func popNeedDisplay(){
+        if(self.topViewController != nil && self.topViewController?.transitionCoordinator != nil){
+            UINavigationController.lyuPopDisplayCount += 1;
+            let popProgress = self.lyuPopProgress;
+            let fromVC = self.topViewController!.transitionCoordinator!.viewController(forKey: .from);
+            let toVC = self.topViewController?.transitionCoordinator?.viewController(forKey: .to);
+            
+            self.updateNavigationBar(fromVC: fromVC!, toVC: toVC!, progress: popProgress);
+        }
+    }
+    
+   @objc fileprivate func pushNeedDisplay(){
+    if(self.topViewController != nil && self.topViewController?.transitionCoordinator != nil){
+        UINavigationController.lyuPushDisplayCount += 1;
+        let popProgress = self.lyuPushProgress;
+        let fromVC = self.topViewController!.transitionCoordinator!.viewController(forKey: .from);
+        let toVC = self.topViewController?.transitionCoordinator?.viewController(forKey: .to);
+        
+        self.updateNavigationBar(fromVC: fromVC!, toVC: toVC!, progress: popProgress);
+    }
+    }
+    
+    
+    
 }
 
 
