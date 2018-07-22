@@ -327,6 +327,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		619F8F562104C8BD00787055 /* test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		8517478E20B659DA002CE67A /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +786,7 @@
 		854D3E0D20A993F900DA8326 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				619F8F562104C8BD00787055 /* test */,
 				61836D1020DE1EE20002BB11 /* Message */,
 				61836D0D20DE1EB70002BB11 /* Mine */,
 				61836D0A20DE1E5D0002BB11 /* Video */,

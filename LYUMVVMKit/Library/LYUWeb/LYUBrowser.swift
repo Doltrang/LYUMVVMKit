@@ -17,10 +17,15 @@ import WebKit
     ///在请求发送前决定是否加载
     @objc optional func browsershouldLoadWithRequest(_ browser:LYUBrowser, request:URLRequest) -> Bool;
     
+    ///在收到响应时决定是否加载
+    @objc optional func browsershouldLoadWithResponse(_ browser:LYUBrowser, response:URLResponse) -> Bool;
+    
     ///开始加载
     @objc optional  func browserDidStartLoading(_ browser:LYUBrowser)
     
-    ///内容开始返回
+    /// 收到服务器重定向时调用
+    
+    ///当内容开始到达主帧时被调用（即将完成)
     @objc optional func browserDidCommitLoading(_ browser:LYUBrowser)
     
     ///完成加载
@@ -30,8 +35,7 @@ import WebKit
     @objc optional func browserDidFailLoading(_ browser:LYUBrowser)
     
     
-    ///在收到响应时决定是否加载
-    @objc optional func browsershouldLoadWithResponse(_ browser:LYUBrowser, response:URLResponse) -> Bool;
+    
     
     /// 标题改变
     @objc optional func browserDidChangePageTitle(_ browser:LYUBrowser)
