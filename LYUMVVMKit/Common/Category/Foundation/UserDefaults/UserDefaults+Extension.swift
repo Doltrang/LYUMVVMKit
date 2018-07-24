@@ -16,6 +16,7 @@ extension UserDefaults {
         }
         set {
             set(newValue, forKey: key)
+            UserDefaults.standard.synchronize()/// 快速写入
         }
     }
     
