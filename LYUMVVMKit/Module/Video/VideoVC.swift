@@ -12,7 +12,13 @@ class VideoVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for i in 0..<3{
+            LLog(i);
+            let v = LYUBasePopWindow(frame: self.view.bounds);
+            v.backgroundColor = UIColor.random()
+            v.lab.text = "\(i)"
+            LYUPopWindowManager.shareManager.showPopView(popView: v);
+        }
         
     }
 

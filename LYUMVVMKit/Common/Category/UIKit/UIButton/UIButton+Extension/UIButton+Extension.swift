@@ -42,7 +42,6 @@ extension UIButton{
     /// 设置相机的权限
     public func  setNeedsCameraPermission(){
 //        UIButton.swizzleMethod(originalSelector: #selector(UIButton.point(inside:with:)), swizzledSelector: #selector(lyu_point(inside:with:)));
-        
          UIButton.swizzleMethod(originalSelector: #selector(UIButton.sendAction(_:to:for:)), swizzledSelector: #selector(lyu_sendAction(_:to:for:)));
     }
     @objc open func lyu_sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {

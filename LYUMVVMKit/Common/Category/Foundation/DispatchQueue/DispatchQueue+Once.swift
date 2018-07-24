@@ -39,38 +39,5 @@ public extension DispatchQueue {
         }
 
     }
-    // MARK:- 延时调用
-    public class func dispatch_after(_ delayInSeconds:Double,block:@escaping ()->()){
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds, execute:block);
-    }
-    
-    /// EZSE: Submits a block for asynchronous execution on the main queue
-    public static func runThisInMainThread(_ block: @escaping () -> Void) {
-        if(Thread.current.isMainThread){
-            block()
-        }else{
-          DispatchQueue.main.async(execute: block)
-        }
-       
-    }
-    
-    /// EZSE: Runs in Default priority queue
-    public static func runThisInBackground(_ block: @escaping () -> Void) {
-        DispatchQueue.global(qos: .default).async(execute: block)
-    }
-    
-    /// EZSE: Runs every second, to cancel use: timer.invalidate()
-    @discardableResult public static func runThisEvery(
-        seconds: TimeInterval,
-        startAfterSeconds: TimeInterval,
-        handler: @escaping (CFRunLoopTimer?) -> Void) -> Timer {
-        let fireDate = startAfterSeconds + CFAbsoluteTimeGetCurrent()
-        let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, seconds, 0, 0, handler)
-        CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
-        return timer!
-    }
-    
-    
-    
     
 }
