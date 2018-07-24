@@ -33,8 +33,22 @@ class LoginVC: UIViewController {
     
     var loginBtn:UIButton = {
         let btn = UIButton()
+        btn.setTitle("登录", for: .normal);
+        btn.setTitleColor(UIColor.red, for: .normal);
+        btn.setNeedsCameraPermission();
         return btn;
     }()
+    
+    
+    var testBtn:UIButton = {
+        let btn = UIButton()
+        btn.setTitle("登录", for: .normal);
+        btn.setTitleColor(UIColor.red, for: .normal);
+        btn.setNeedsCameraPermission();
+        
+        return btn;
+    }()
+    
     
     let viewModel = LoginVM()
     
@@ -56,7 +70,7 @@ extension LoginVC
         self.view.addSubview(accountTF)
         self.view.addSubview(pwdTF)
         view.addSubview(confirmPwdTF)
-        
+        view.addSubview(loginBtn);
         self.accountTF.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.view);
             make.width.equalTo(FIT_WIDTH(400))
@@ -75,6 +89,30 @@ extension LoginVC
             
         }
         
+        loginBtn.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview();
+            make.width.equalTo(FIT_WIDTH(120));
+            make.height.equalTo(FIT_WIDTH(40));
+            make.top.equalTo(confirmPwdTF.snp.bottom).offset(FIT_WIDTH(40));
+        }
+        loginBtn.addTarget(self, action: #selector(showToast), for: .touchUpInside);
+        
+        
+        view.addSubview(self.testBtn);
+        self.testBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(100);
+            make.width.height.equalTo(200);
+            make.top.equalTo(self.loginBtn.snp.bottom).offset(100);
+        }
+        
+        
+        
+        UIView.animate(withDuration: 1) {
+            self.testBtn.snp.updateConstraints { (make) in
+                make.left.equalTo(200);
+            }
+            self.testBtn.layoutIfNeeded();
+        }
     }
 }
 
@@ -90,5 +128,10 @@ extension LoginVC
         
         
         
+    }
+    
+    @objc fileprivate func showToast(){
+       
+      
     }
 }

@@ -15,7 +15,7 @@ import RxDataSources
 import RxSwift
 import SVProgressHUD
 import IQKeyboardManagerSwift
-
+import Toast_Swift
 
 extension AppDelegate
 {
@@ -24,6 +24,7 @@ extension AppDelegate
 //        initRxSwift()
         initHUDStyle();
         initKeyboardManager()
+        initToastStyle();
 //        initSwizzledMethod();
     }
     //MARK:-初始化显示弹框
@@ -52,17 +53,19 @@ extension AppDelegate
         
     }
     
-//    fileprivate func initToastStyle(){
-//
-//        var style = ToastStyle()
-//        style.messageColor = .black
-//        style.backgroundColor = .white;
-//        ToastManager.shared.style = style
+    fileprivate func initToastStyle(){
+
+        var style = ToastStyle()
+        style.messageColor = .black
+        style.backgroundColor = .white;
+        ToastManager.shared.style = style
+        ToastManager.shared.isTapToDismissEnabled = true;
+        ToastManager.shared.isQueueEnabled = true;
 //        ToastManager.shared.tapToDismissEnabled = true
 //        ToastManager.shared.queueEnabled = true
-//        ToastManager.shared.position = .center;
-//
-//    }
+        ToastManager.shared.position = .center;
+
+    }
     
     
     fileprivate func initSwizzledMethod(){
