@@ -93,6 +93,7 @@ extension LYUBrowserConfig
         
     }
     
+  
     // MARK:清除全部的脚本
     func clearScripts(){
         self.contentController.removeAllUserScripts();
@@ -151,6 +152,10 @@ extension LYUBrowserConfig{
     ///  清除缓存
     class func clearCache(){
         URLCache.shared.removeAllCachedResponses()
+        let cache = URLCache.shared
+        cache.removeAllCachedResponses()
+        cache.diskCapacity = 0;
+        cache.memoryCapacity = 0;
     }
  
     // MARK:清除cookie
@@ -162,6 +167,21 @@ extension LYUBrowserConfig{
                 HTTPCookieStorage.shared.deleteCookie(cookie);
             }
         }
+        if #available(iOS 9.0, *) {
+            let dateStore = WKWebsiteDataStore.default()
+            dateStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { (records) in
+                for record in records{
+                    WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {
+                        LLog("Cookies for \(record.displayName)  deleted successfully");
+                    });
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+     
+        
+        
     }
     
     

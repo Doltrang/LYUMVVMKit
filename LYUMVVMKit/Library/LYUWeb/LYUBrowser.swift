@@ -222,7 +222,18 @@ extension LYUBrowser{
     func getAtrribute(attr:String, elementId:String, completionHandler:((Any?, Error?) -> Swift.Void)? = nil){
         self.evalJavaScript(javaScriptString: "document.getElementById(\"\(elementId)\").\(attr)", completionHandler: completionHandler);
     }
-    
+    func addCustomUserAgent(agent:String){
+        self.evalJavaScript(javaScriptString: "navigator.userAgent") { (result, error) in
+            let  userAgent:String = result as? String ?? "";
+            UserDefaults.standard.register(defaults: ["UserAgent":"\(userAgent)\(agent)"]);
+            UserDefaults.standard.synchronize()
+            if #available(iOS 9.0, *) {
+                self.webView.customUserAgent = "\(userAgent)\(agent)"
+            } else {
+                // Fallback on earlier versions
+            };
+        }
+    }
     /// 底部插入空白区
     func insertBottom(height:Double){
         self.evalJavaScript(javaScriptString: "var div=document.createElement(\"div\");div.style.width=document.body.clientWidth;div.style.height=\"\(height)px\";document.body.appendChild(div);")
