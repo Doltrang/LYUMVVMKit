@@ -76,6 +76,7 @@ class LYUBasePopWindow: UIView {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event);
+        self.removeFromSuperview();
         if(self.dissmiss != nil){
             self.dissmiss!()
         }
