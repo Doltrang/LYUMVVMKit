@@ -12,7 +12,7 @@ import Foundation
 import Moya
 import RxCocoa
 import RxSwift
-
+import Result
 
 enum LYUHomeAPI {
  
@@ -63,7 +63,22 @@ extension LYUHomeAPI:TargetType
     var validate: Bool {
         return false
     }
-
+ 
 }
-
-let LYUHomeNetTool = MoyaProvider<LYUHomeAPI>()
+let requestClosure = { (endpoint: Endpoint, closure: (Result<URLRequest, MoyaError>) -> Void)  -> Void in
+    do {
+        var  urlRequest = try endpoint.urlRequest()
+        urlRequest.timeoutInterval = 10
+        urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        urlRequest.httpShouldHandleCookies = false
+        closure(.success(urlRequest))
+    } catch MoyaError.requestMapping(let url) {
+        closure(.failure(MoyaError.requestMapping(url)))
+    } catch MoyaError.parameterEncoding(let error) {
+        closure(.failure(MoyaError.parameterEncoding(error)))
+    } catch {
+        closure(.failure(MoyaError.underlying(error, nil)))
+    }
+    
+}
+let LYUHomeNetTool = MoyaProvider<LYUHomeAPI>(requestClosure: requestClosure)

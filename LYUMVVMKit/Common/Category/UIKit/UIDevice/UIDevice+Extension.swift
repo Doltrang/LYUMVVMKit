@@ -32,29 +32,28 @@ private let DeviceList = [
 /* iPad 2 */          "iPad2,1": "iPad 2", "iPad2,2": "iPad 2", "iPad2,3": "iPad 2", "iPad2,4": "iPad 2",
 /* iPad 3 */          "iPad3,1": "iPad 3", "iPad3,2": "iPad 3", "iPad3,3": "iPad 3",
 /* iPad 4 */          "iPad3,4": "iPad 4", "iPad3,5": "iPad 4", "iPad3,6": "iPad 4",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                /* iPad Air */        "iPad4,1": "iPad Air", "iPad4,2": "iPad Air", "iPad4,3": "iPad Air",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /* iPad Air 2 */      "iPad5,3": "iPad Air 2", "iPad5,4": "iPad Air 2",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /* iPad Mini */       "iPad2,5": "iPad Mini", "iPad2,6": "iPad Mini", "iPad2,7": "iPad Mini",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /* iPad Mini 2 */     "iPad4,4": "iPad Mini 2", "iPad4,5": "iPad Mini 2", "iPad4,6": "iPad Mini 2",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        /* iPad Mini 3 */     "iPad4,7": "iPad Mini 3", "iPad4,8": "iPad Mini 3", "iPad4,9": "iPad Mini 3",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              /* iPad Mini 4 */     "iPad5,1": "iPad Mini 4", "iPad5,2": "iPad Mini 4",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    /* iPad Pro */        "iPad6,7": "iPad Pro", "iPad6,8": "iPad Pro",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          /* AppleTV */         "AppleTV5,3": "AppleTV",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /* Simulator */       "x86_64": "Simulator", "i386": "Simulator"
+/* iPad Air */        "iPad4,1": "iPad Air", "iPad4,2": "iPad Air", "iPad4,3": "iPad Air",
+/* iPad Air 2 */      "iPad5,3": "iPad Air 2", "iPad5,4": "iPad Air 2",
+/* iPad Mini */       "iPad2,5": "iPad Mini", "iPad2,6": "iPad Mini", "iPad2,7": "iPad Mini",
+/* iPad Mini 2 */     "iPad4,4": "iPad Mini 2", "iPad4,5": "iPad Mini 2", "iPad4,6": "iPad Mini 2",
+/* iPad Mini 3 */     "iPad4,7": "iPad Mini 3", "iPad4,8": "iPad Mini 3", "iPad4,9": "iPad Mini 3",
+/* iPad Mini 4 */     "iPad5,1": "iPad Mini 4", "iPad5,2": "iPad Mini 4",
+/* iPad Pro */        "iPad6,7": "iPad Pro", "iPad6,8": "iPad Pro",
+/* AppleTV */         "AppleTV5,3": "AppleTV",
+/* Simulator */       "x86_64": "Simulator", "i386": "Simulator"
 ]
 
 extension UIDevice {
 /// EZSwiftExtensions
-public class func idForVendor() -> String? {
-return UIDevice.current.identifierForVendor?.uuidString
+    public class var idForVendo:String?
+    {return UIDevice.current.identifierForVendor?.uuidString}
+
+/// Operating system name
+    public class var systemName:String {
+        return UIDevice.current.identifierForVendor!.uuidString;
 }
 
-/// EZSwiftExtensions - Operating system name
-public class func systemName() -> String {
-return UIDevice.current.systemName
-}
-
-/// EZSwiftExtensions - Operating system version
+///  Operating system version
 public class func systemVersion() -> String {
 return UIDevice.current.systemVersion
 }
@@ -74,18 +73,17 @@ public class func deviceLanguage() -> String {
 return Bundle.main.preferredLocalizations[0]
 }
 
-/// EZSwiftExtensions
 public class func deviceModelReadable() -> String {
 return DeviceList[deviceModel()] ?? deviceModel()
 }
 
-/// EZSE: Returns true if the device is iPhone //TODO: Add to readme
-public class func isPhone() -> Bool {
+///  Returns true if the device is iPhone //TODO: Add to readme
+    public class var isPhone : Bool {
 return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone
 }
 
-/// EZSE: Returns true if the device is iPad //TODO: Add to readme
-public class func isPad() -> Bool {
+/// Returns true if the device is iPad //TODO: Add to readme
+    public class var isPad:Bool {
 return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
 }
 

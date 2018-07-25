@@ -61,8 +61,6 @@ extension AppDelegate
         ToastManager.shared.style = style
         ToastManager.shared.isTapToDismissEnabled = true;
         ToastManager.shared.isQueueEnabled = true;
-//        ToastManager.shared.tapToDismissEnabled = true
-//        ToastManager.shared.queueEnabled = true
         ToastManager.shared.position = .center;
 
     }

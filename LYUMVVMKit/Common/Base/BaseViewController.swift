@@ -12,9 +12,12 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        self.shouldAutorotate = false;
+//        self.supportedInterfaceOrientations = .landscape;
+//        preferredInterfaceOrientationForPresentation = .landscapeLeft;
     }
+  
+
 
     deinit {
         LLog("释放了")
