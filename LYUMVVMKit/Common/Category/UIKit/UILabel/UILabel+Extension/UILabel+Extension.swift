@@ -32,7 +32,7 @@ extension UILabel {
     /// - Parameters:
     ///   - width: 文本的最大宽度
     /// - Returns: 文本的最小高度
-    func getTextHeight(width:CGFloat)->CGFloat{
+    func getTextHeight(with width:CGFloat)->CGFloat{
         let rect = self.textRect(forBounds: CGRect(x: 0.0, y: 0.0, width: width, height: CGFloat(MAXFLOAT)), limitedToNumberOfLines: self.numberOfLines);
         return rect.size.height;
     }
@@ -41,7 +41,7 @@ extension UILabel {
     ///
     /// - Parameter height: 文本的高度
     /// - Returns: 文本的最小宽度
-    func getTextWidth(height:CGFloat)->CGFloat{
+    func getTextWidth(with height:CGFloat)->CGFloat{
         let rect = self.textRect(forBounds: CGRect(x: 0.0, y: 0.0, width: CGFloat(MAXFLOAT), height: height), limitedToNumberOfLines: self.numberOfLines);
         return rect.size.width;
     }

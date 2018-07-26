@@ -12,12 +12,27 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false;
 //        self.shouldAutorotate = false;
 //        self.supportedInterfaceOrientations = .landscape;
 //        preferredInterfaceOrientationForPresentation = .landscapeLeft;
     }
   
-
+    //开启 push视图 右滑手势
+    fileprivate func openSwipe(){
+        if(self.navigationController != nil){
+            self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
+        }
+        
+    }
+    
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        if self.navigationController?.viewControllers.count == 1{
+            return false;
+        }
+        return true;
+    }
 
     deinit {
         LLog("释放了")
