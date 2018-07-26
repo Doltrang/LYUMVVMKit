@@ -45,7 +45,9 @@ class LYUPopWindowManager: NSObject {
         LYUPopWindowManager.shareManager.operationQueue.addOperation(operation);
         
         popView.dissmiss = {
+            DispatchQueue.dispatch_after(0.2, block: {
                 semaphore.signal();
+            })
         }
     }
     

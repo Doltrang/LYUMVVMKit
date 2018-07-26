@@ -88,13 +88,20 @@ extension HomeVC
    
         // 设置代理
 //        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        tableView.setupRefreshBlocking(refreshHeader: true, refreshFooter: true) { (type) in
+            switch (type){
+            case .loadNewData:
+                self.vmOutput?.requestCommond.onNext(true)
+                break;
+            case .loadMoreData:
+                self.vmOutput?.requestCommond.onNext(false)
+                break;
+            default :
+                break;
+            }
+        };
+
         
-        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            self.vmOutput?.requestCommond.onNext(true)
-        })
-        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            self.vmOutput?.requestCommond.onNext(false)
-        })
         
         let vmInput = HomeViewModel.Input(category: .welfare)
         let vmOutput = viewModel.transform(input: vmInput)

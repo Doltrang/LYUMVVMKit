@@ -61,7 +61,7 @@ extension HomeViewCell{
             make.height.equalTo(FIT_WIDTH(300))
             make.bottom.equalTo(self.contentView.snp.bottom).offset(-FIT_WIDTH(20)).priority(100)
         }
-        
+
         self.descLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.imageV.snp.right).offset(FIT_WIDTH(20))
             make.width.lessThanOrEqualTo(FIT_WIDTH(300));
@@ -75,8 +75,7 @@ extension HomeViewCell{
             make.height.lessThanOrEqualTo(FIT_WIDTH(200))
             make.top.equalTo(self.descLabel.snp.bottom).offset(FIT_WIDTH(40))
         }
-        
-//        self.imageV.addRoundedCorners(radii: CGSize(width: 100, height: 100), rect: CGRect(x: 0, y: 0, width: FIT_WIDTH(300), height: FIT_WIDTH(300)));
+        self.imageV.addRoundedCorners(radii: CGSize(width: 100, height: 100), rect: CGRect(x: 0, y: 0, width: FIT_WIDTH(300), height: FIT_WIDTH(300)));
     
     }
 }

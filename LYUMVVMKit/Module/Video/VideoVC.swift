@@ -20,6 +20,7 @@ class VideoVC: BaseViewController {
             LYUPopWindowManager.shareManager.showPopView(popView: v);
         }
         
+        self.view.backgroundColor = UIColor.red;
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +28,7 @@ class VideoVC: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+ 
 
 
 
