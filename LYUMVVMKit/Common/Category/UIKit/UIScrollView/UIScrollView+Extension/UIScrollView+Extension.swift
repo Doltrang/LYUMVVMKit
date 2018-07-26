@@ -29,7 +29,7 @@ extension UIScrollView{
     }
     
     
-    fileprivate var refreshBlocking:RefreshBlocking?{
+    internal var refreshBlocking:RefreshBlocking?{
         
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.kRefreshBlock) as? RefreshBlocking) ?? nil
@@ -43,7 +43,7 @@ extension UIScrollView{
     }
     
     
-    fileprivate  var isRefreshHeader:Bool{
+    internal  var isRefreshHeader:Bool{
         
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.kHeaderRefresh) as? Bool) ?? false
@@ -58,7 +58,7 @@ extension UIScrollView{
     }
     
     
-    fileprivate  var isRefreshFooter:Bool{
+    internal  var isRefreshFooter:Bool{
         
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.kFooterRefresh) as? Bool) ?? false
@@ -74,29 +74,29 @@ extension UIScrollView{
     fileprivate func setupRefreshHeader(){
         
         if(self.isRefreshHeader){//头部刷新
-//            self.mj_header = MJRefreshNormalHeader(refreshingBlock: {[unowned self] in
-//                if(self.refreshBlocking != nil){
-//                    self.refreshBlocking!(RefreshBlockingType.loadNewData);
-//                }
-//
-//            });
+            self.mj_header = LYURefreshHeaderView(refreshingBlock: {[unowned self] in
+                if(self.refreshBlocking != nil){
+                    self.refreshBlocking!(RefreshBlockingType.loadNewData);
+                }
+
+            });
         }else{
-//            self.mj_header = nil;
+            self.mj_header = nil;
         }
     }
     
     //设置刷新尾部
     fileprivate func setupRefreshFooter(){
         if(self.isRefreshFooter){
-//            self.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: { [unowned self] in
-//
-//                if(self.refreshBlocking != nil){
-//                    self.refreshBlocking!(RefreshBlockingType.loadMoreData);
-//                }
-//
-//            })
+            self.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: { [unowned self] in
+
+                if(self.refreshBlocking != nil){
+                    self.refreshBlocking!(RefreshBlockingType.loadMoreData);
+                }
+
+            })
         }else{
-//            self.mj_footer = nil;
+            self.mj_footer = nil;
         }
     }
     

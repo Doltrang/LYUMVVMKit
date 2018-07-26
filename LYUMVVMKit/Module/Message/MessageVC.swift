@@ -10,10 +10,9 @@ import UIKit
 
 class MessageVC: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    override func viewDidLoad() {
+        super.viewDidLoad() 
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -24,7 +23,6 @@ class MessageVC: BaseViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

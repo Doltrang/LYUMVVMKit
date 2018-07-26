@@ -78,6 +78,7 @@
 		85C2C4D320EB70520056ED34 /* LYULoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C2C4D220EB70520056ED34 /* LYULoginNetworkService.swift */; };
 		85C2C4D620EB7CC60056ED34 /* LYULoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C2C4D520EB7CC60056ED34 /* LYULoginService.swift */; };
 		85C2C4D920EB85E40056ED34 /* Rective+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C2C4D820EB85E40056ED34 /* Rective+Category.swift */; };
+		85DBEBF02109B5050090BEE0 /* LYURefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DBEBEF2109B5050090BEE0 /* LYURefreshHeaderView.swift */; };
 		85FCAD0E20F759F100BDC10D /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD0D20F759F100BDC10D /* UIDevice+Extension.swift */; };
 		85FCAD1320F75A7100BDC10D /* LYURouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD1020F75A7100BDC10D /* LYURouter.swift */; };
 		85FCAD1420F75A7100BDC10D /* LYURouterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD1120F75A7100BDC10D /* LYURouterExtension.swift */; };
@@ -167,6 +168,7 @@
 		85C2C4D220EB70520056ED34 /* LYULoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULoginNetworkService.swift; sourceTree = "<group>"; };
 		85C2C4D520EB7CC60056ED34 /* LYULoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYULoginService.swift; sourceTree = "<group>"; };
 		85C2C4D820EB85E40056ED34 /* Rective+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rective+Category.swift"; sourceTree = "<group>"; };
+		85DBEBEF2109B5050090BEE0 /* LYURefreshHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYURefreshHeaderView.swift; sourceTree = "<group>"; };
 		85FCAD0D20F759F100BDC10D /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		85FCAD1020F75A7100BDC10D /* LYURouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYURouter.swift; sourceTree = "<group>"; };
 		85FCAD1120F75A7100BDC10D /* LYURouterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYURouterExtension.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		8517479120B66B47002CE67A /* LYUView */ = {
 			isa = PBXGroup;
 			children = (
+				85DBEBEE2109B4E50090BEE0 /* LYURefreshHeaderView */,
 				852974A820EB01090006429D /* LYUDynamicView */,
 				851747B220B7BDCD002CE67A /* LYUCountDownBtn */,
 				8517479220B66B6C002CE67A /* LYUContentLayoutBtn */,
@@ -830,6 +833,14 @@
 			path = Rective;
 			sourceTree = "<group>";
 		};
+		85DBEBEE2109B4E50090BEE0 /* LYURefreshHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				85DBEBEF2109B5050090BEE0 /* LYURefreshHeaderView.swift */,
+			);
+			path = LYURefreshHeaderView;
+			sourceTree = "<group>";
+		};
 		85FCAD0C20F759E000BDC10D /* UIDevice */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,6 +1052,7 @@
 				854D3E0320A9919400DA8326 /* UIView+Snapshot.swift in Sources */,
 				85FCAD2820F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift in Sources */,
 				61836CF720DDD6760002BB11 /* LoginVM.swift in Sources */,
+				85DBEBF02109B5050090BEE0 /* LYURefreshHeaderView.swift in Sources */,
 				854D3DF020A9919400DA8326 /* DispatchQueue+Once.swift in Sources */,
 				854D3E0120A9919400DA8326 /* UIView+BlockGesture.swift in Sources */,
 				854D3DF720A9919400DA8326 /* UIResponder+Router.swift in Sources */,
