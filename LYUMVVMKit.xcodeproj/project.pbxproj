@@ -30,6 +30,7 @@
 		619F8F5320F99DA000787055 /* UINavigationController+LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */; };
 		619F8F5A210762E100787055 /* LYUPopWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F59210762E100787055 /* LYUPopWindowManager.swift */; };
 		619F8F5C2107658700787055 /* DispatchQueue+Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F5B2107658700787055 /* DispatchQueue+Handle.swift */; };
+		619F8F662113404A00787055 /* EmjoyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */; };
 		8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517478F20B659F4002CE67A /* LYUViewModelType.swift */; };
 		8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */; };
 		8517479820B68D0D002CE67A /* read_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8517479720B68D0D002CE67A /* read_share.png */; };
@@ -117,6 +118,7 @@
 		619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+LYUNavigationBar.swift"; sourceTree = "<group>"; };
 		619F8F59210762E100787055 /* LYUPopWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUPopWindowManager.swift; sourceTree = "<group>"; };
 		619F8F5B2107658700787055 /* DispatchQueue+Handle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Handle.swift"; sourceTree = "<group>"; };
+		619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmjoyCollectionViewLayout.swift; sourceTree = "<group>"; };
 		663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYUMVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8517478F20B659F4002CE67A /* LYUViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUViewModelType.swift; sourceTree = "<group>"; };
 		8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUContentLayoutBtn.swift; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 				858504BB20CE4D510039E57D /* LYULock.swift */,
 				8527AD6120E245F80090D185 /* LYURxSwiftOperators.swift */,
 				619F8F59210762E100787055 /* LYUPopWindowManager.swift */,
+				619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1054,6 +1057,7 @@
 				61836CF720DDD6760002BB11 /* LoginVM.swift in Sources */,
 				85DBEBF02109B5050090BEE0 /* LYURefreshHeaderView.swift in Sources */,
 				854D3DF020A9919400DA8326 /* DispatchQueue+Once.swift in Sources */,
+				619F8F662113404A00787055 /* EmjoyCollectionViewLayout.swift in Sources */,
 				854D3E0120A9919400DA8326 /* UIView+BlockGesture.swift in Sources */,
 				854D3DF720A9919400DA8326 /* UIResponder+Router.swift in Sources */,
 				851747B420B7BDD5002CE67A /* LYUCountDownBtn.swift in Sources */,
