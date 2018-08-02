@@ -31,6 +31,7 @@
 		619F8F5A210762E100787055 /* LYUPopWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F59210762E100787055 /* LYUPopWindowManager.swift */; };
 		619F8F5C2107658700787055 /* DispatchQueue+Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F5B2107658700787055 /* DispatchQueue+Handle.swift */; };
 		619F8F662113404A00787055 /* EmjoyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */; };
+		619F8F69211342F000787055 /* LYUPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F68211342F000787055 /* LYUPDFView.swift */; };
 		8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517478F20B659F4002CE67A /* LYUViewModelType.swift */; };
 		8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */; };
 		8517479820B68D0D002CE67A /* read_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8517479720B68D0D002CE67A /* read_share.png */; };
@@ -119,6 +120,7 @@
 		619F8F59210762E100787055 /* LYUPopWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUPopWindowManager.swift; sourceTree = "<group>"; };
 		619F8F5B2107658700787055 /* DispatchQueue+Handle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Handle.swift"; sourceTree = "<group>"; };
 		619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmjoyCollectionViewLayout.swift; sourceTree = "<group>"; };
+		619F8F68211342F000787055 /* LYUPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUPDFView.swift; sourceTree = "<group>"; };
 		663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYUMVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8517478F20B659F4002CE67A /* LYUViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUViewModelType.swift; sourceTree = "<group>"; };
 		8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUContentLayoutBtn.swift; sourceTree = "<group>"; };
@@ -342,6 +344,14 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		619F8F67211342DD00787055 /* LYUPDFView */ = {
+			isa = PBXGroup;
+			children = (
+				619F8F68211342F000787055 /* LYUPDFView.swift */,
+			);
+			path = LYUPDFView;
+			sourceTree = "<group>";
+		};
 		8517478E20B659DA002CE67A /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +363,7 @@
 		8517479120B66B47002CE67A /* LYUView */ = {
 			isa = PBXGroup;
 			children = (
+				619F8F67211342DD00787055 /* LYUPDFView */,
 				85DBEBEE2109B4E50090BEE0 /* LYURefreshHeaderView */,
 				852974A820EB01090006429D /* LYUDynamicView */,
 				851747B220B7BDCD002CE67A /* LYUCountDownBtn */,
@@ -1073,6 +1084,7 @@
 				61836D0620DE04EB0002BB11 /* HomeViewModel.swift in Sources */,
 				61836D1220DE1EF30002BB11 /* MessageVC.swift in Sources */,
 				854D3E0020A9919400DA8326 /* UIView+Animation.swift in Sources */,
+				619F8F69211342F000787055 /* LYUPDFView.swift in Sources */,
 				854D3E1020A9942F00DA8326 /* LoginVC.swift in Sources */,
 				854D3DFF20A9919400DA8326 /* UITextField+Extension.swift in Sources */,
 				854D3DEE20A9919400DA8326 /* CGFloat+Extension.swift in Sources */,
