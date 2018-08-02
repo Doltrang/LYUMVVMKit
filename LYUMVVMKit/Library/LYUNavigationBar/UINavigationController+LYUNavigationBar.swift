@@ -9,6 +9,8 @@
 import Foundation
 
 extension UINavigationController{
+    fileprivate typealias Animations = (UITransitionContextViewControllerKey) -> (UITransitionContextViewControllerKey)
+    
     static var lyuPopDuration = 0.12;
     static var lyuPopDisplayCount = 0.0;
     var lyuPopProgress:CGFloat{
@@ -78,7 +80,7 @@ extension UINavigationController{
         let toTintColor = toVC.navBarTintColor;
         let newTintColor = fromTintColor.toColor(toColor: toTintColor, percent: progress);
         
-        if(LYUNavigationBarConfig.needUpdateNavigationBar(vc: fromVC) || LYUNavigationBarConfig.needUpdateNavigationBar(vc: toVC)){
+        if(LYUNavigationBarConfig.needUpdateNavigationBar(vc: fromVC)){
             self.setNeedsNavigationBarUpdateForTintColor(tintColor: newTintColor)
         }
         
@@ -128,6 +130,29 @@ extension UINavigationController{
         
     }
     
+    @objc func lyu_dealInteractionChanges(context:UIViewControllerTransitionCoordinatorContext){
+        
+        var animations:Animations? = {[weak self] key  in
+            let vc = context.viewController(forKey: key)
+            let curColor = vc?.navBarBarTintColor
+            let curAlpha = vc?.navBarBackgroundAlpha
+            self?.setNeedsNavigationBarUpdateForBarTintColor(barTintColor: curColor!)
+        self?.setNeedsNavigationBarUpdateForBarBackgroundAlpha(barBackgroundAlpha: curAlpha!)
+            return key;
+        }
+     
+        if(context.isCancelled){
+            UIView.animate(withDuration: 0) {
+               _ =  animations!(UITransitionContextViewControllerKey.from);
+            }
+        }else{
+            let finishDuration:TimeInterval = context.transitionDuration *  TimeInterval((1.0 - context.percentComplete))
+            UIView.animate(withDuration: finishDuration) {
+                  _ =  animations!(UITransitionContextViewControllerKey.from);
+            }
+        }
+        
+    }
     
     @objc func lyu_updateInteractiveTransition(_ percentComplete:CGFloat){
         let fromVC = self.topViewController?.transitionCoordinator?.viewController(forKey: .from);

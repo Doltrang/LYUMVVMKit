@@ -89,7 +89,7 @@
 		85FCAD1B20F75A8B00BDC10D /* LYUBrowserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD1820F75A8B00BDC10D /* LYUBrowserConfig.swift */; };
 		85FCAD1C20F75A8B00BDC10D /* LYULinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD1920F75A8B00BDC10D /* LYULinearProgressBar.swift */; };
 		85FCAD1E20F75A9300BDC10D /* LYUWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD1D20F75A9300BDC10D /* LYUWebViewController.swift */; };
-		85FCAD2220F75AA800BDC10D /* LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */; };
+		85FCAD2220F75AA800BDC10D /* LYUNavigationBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2020F75AA800BDC10D /* LYUNavigationBarConfig.swift */; };
 		85FCAD2320F75AA800BDC10D /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */; };
 		85FCAD2820F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */; };
 /* End PBXBuildFile section */
@@ -181,7 +181,7 @@
 		85FCAD1820F75A8B00BDC10D /* LYUBrowserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUBrowserConfig.swift; sourceTree = "<group>"; };
 		85FCAD1920F75A8B00BDC10D /* LYULinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYULinearProgressBar.swift; sourceTree = "<group>"; };
 		85FCAD1D20F75A9300BDC10D /* LYUWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUWebViewController.swift; sourceTree = "<group>"; };
-		85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUNavigationBar.swift; sourceTree = "<group>"; };
+		85FCAD2020F75AA800BDC10D /* LYUNavigationBarConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYUNavigationBarConfig.swift; sourceTree = "<group>"; };
 		85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helper.swift"; sourceTree = "<group>"; };
 		85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LYUNavigationBar.swift"; sourceTree = "<group>"; };
 		880EC322FC07882EC6533F5A /* Pods-LYUMVVMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYUMVVMKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYUMVVMKit/Pods-LYUMVVMKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -886,7 +886,7 @@
 		85FCAD1F20F75AA800BDC10D /* LYUNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				85FCAD2020F75AA800BDC10D /* LYUNavigationBar.swift */,
+				85FCAD2020F75AA800BDC10D /* LYUNavigationBarConfig.swift */,
 				85FCAD2120F75AA800BDC10D /* UIImage+Helper.swift */,
 				85A931C720FC461B004C0FB5 /* UINavigationBar+Extension.swift */,
 				85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */,
@@ -1104,7 +1104,7 @@
 				61836CFA20DDD98D0002BB11 /* LYUHomeAPI.swift in Sources */,
 				851747A320B79EBE002CE67A /* LYUMapToModelExtension.swift in Sources */,
 				854D3E0620A9919400DA8326 /* UIViewController+UIBarButtonItem.swift in Sources */,
-				85FCAD2220F75AA800BDC10D /* LYUNavigationBar.swift in Sources */,
+				85FCAD2220F75AA800BDC10D /* LYUNavigationBarConfig.swift in Sources */,
 				854D3DFB20A9919400DA8326 /* UIImage+Extension.swift in Sources */,
 				61836CF420DDD5970002BB11 /* BaseModel.swift in Sources */,
 				61836CFD20DDDEBC0002BB11 /* BaseViewModel.swift in Sources */,
