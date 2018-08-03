@@ -12,6 +12,7 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.interactivePopGestureRecognizer?.delegate = self;
        setUpNavigationBarAppearance();
         // Do any additional setup after loading the view.
     }
@@ -77,4 +78,11 @@ extension BaseNavigationController{
     
 }
 
-
+extension BaseNavigationController {
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if self.viewControllers.count == 1{
+            return false;
+        }
+        return true;
+    }
+}
