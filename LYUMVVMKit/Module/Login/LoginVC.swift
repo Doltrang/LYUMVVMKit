@@ -85,7 +85,7 @@ extension LoginVC
         }
         confirmPwdTF.snp.makeConstraints { (make) in
              make.centerX.width.height.equalTo(self.accountTF);
-            make.top.equalTo(self.pwdTF.snp.bottom).offset(FIT_WIDTH(100));
+            make.bottom.equalTo(self.view.snp.bottom).offset(FIT_WIDTH(100));
             
         }
         
