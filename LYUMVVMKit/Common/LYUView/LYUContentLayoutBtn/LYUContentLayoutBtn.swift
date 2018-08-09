@@ -9,15 +9,18 @@
 import UIKit
 
 enum LYUButtonLayoutStyle {
-    case ImageLeft        /// 图片居左 文字配合间距 整体垂直方向居中
-    case ImageRight      /// 图片居右 文字配合间距 整体垂直方向居中
-    case ImageTop         /// 图片居上  文字配合间距 整体水平方向居中
-    case ImageBottom   /// 图片居下 文字配合间距 整体水平方向居中
+    case none
+    case ImageLeftContentStart        /// 图片居左 文字居右 整体水平居左
+    case ImageLeftContentCenter      /// 图片居左 文字配合间距 整体水平居中
+    case ImageRightContentStart       /// 图片居右 文字配合间距 整体水平居右
+    case ImageRightContentCenter    /// 图片局右 文字配合间距 整体水平居中
+    case ImageTopContentCenter         /// 图片居上  文字配合间距 整体垂直方向居中
+    case ImageBottomContentCenter   /// 图片居下 文字配合间距 整体垂直方向居中
 }
 
 class LYUContentLayoutBtn: UIButton {
    private(set) fileprivate var imgSize:CGSize = CGSize.zero;
-   private(set) fileprivate var style:LYUButtonLayoutStyle = .ImageTop;
+   private(set) fileprivate var style:LYUButtonLayoutStyle = .none;
    private(set) fileprivate var space:CGFloat = 0.0;
   
     /// layout btn subviews
@@ -40,23 +43,52 @@ class LYUContentLayoutBtn: UIButton {
         super.layoutSubviews();
         let size = self.bounds.size;
         switch self.style {
-        case .ImageTop:
+        case .none:
             
-            self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: 0, width: self.imgSize.width, height: self.imgSize.height);
-            // 计算文本的高度
-            self.titleLabel?.frame = CGRect(x: 0, y: self.imgSize.height + space, width: size.width, height:size.height - self.imgSize.height - self.space);
-            self.titleLabel?.sizeToFit();
-            self.titleLabel?.bounds.size.width = size.width;
-            self.titleLabel?.frame.origin.x = 0;
-        case .ImageBottom:
-             self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: size.height - self.imgSize.height, width: self.imgSize.width, height: self.imgSize.height);
-             self.titleLabel?.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height - self.space - self.imgSize.height);
-        case .ImageLeft:
-            self.imageView?.frame = CGRect(x: 0, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height);
-            self.titleLabel?.frame = CGRect(x: self.imgSize.width + self.space, y: 0, width: (size.width - self.imgSize.width - self.space), height: size.height);
-        case .ImageRight:
-            self.imageView?.frame = CGRect(x: size.width - self.imgSize.width, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height);
-            self.titleLabel?.frame = CGRect(x: 0, y:0, width: size.width - self.space - self.imgSize.width, height: size.height);
+            break;
+        case .ImageLeftContentStart:
+            self.imageView?.frame = CGRect(x: 0, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height)
+            let labRect = self.titleLabel!.textRect(forBounds: CGRect(x: self.imgSize.width + self.space, y: 0, width: size.width - self.imgSize.width - self.space, height: size.height), limitedToNumberOfLines: self.titleLabel!.numberOfLines)
+            self.titleLabel?.frame = CGRect(x: self.imgSize.width+self.space, y: (size.height - labRect.size.height)/2.0, width: size.width - self.imgSize.width - self.space, height: labRect.size.height)
+            
+            break;
+        case .ImageLeftContentCenter:
+            self.imageView?.frame = CGRect(x: 0, y: size.width/2.0 - self.imgSize.width - self.space/2.0, width: self.imgSize.width, height: self.imgSize.height);
+            
+            let labRect = self.titleLabel!.textRect(forBounds: CGRect(x: self.imgSize.width + self.space, y: 0, width: size.width - self.imgSize.width - self.space/2.0, height: size.height), limitedToNumberOfLines: self.titleLabel!.numberOfLines)
+            
+            self.titleLabel?.frame = CGRect(x: size.width/2.0 + self.space/2.0, y: (size.height - labRect.size.height)/2.0, width: size.width - self.imgSize.width - self.space/2.0, height: labRect.size.height)
+            
+            break;
+        case .ImageRightContentStart:
+            self.imageView?.frame = CGRect(x: size.width - self.imgSize.width, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height)
+            
+             let labRect = self.titleLabel!.textRect(forBounds: CGRect(x: 0, y: 0, width: size.width - self.imgSize.width - self.space, height: size.height), limitedToNumberOfLines: self.titleLabel!.numberOfLines)
+            
+            self.titleLabel?.frame = CGRect(x: 0, y: (size.height - labRect.size.height)/2.0, width: size.width - self.imgSize.width - self.space, height: labRect.size.height);
+            
+            break;
+        case .ImageRightContentCenter:
+              self.imageView?.frame = CGRect(x: size.width/2.0+self.space/2.0, y: (size.height - self.imgSize.height)/2.0, width: self.imgSize.width, height: self.imgSize.height)
+              
+             let labRect = self.titleLabel!.textRect(forBounds: CGRect(x: 0, y: 0, width: size.width - self.imgSize.width - self.space, height: size.height), limitedToNumberOfLines: self.titleLabel!.numberOfLines)
+              
+              self.titleLabel?.frame = CGRect(x: 0, y: (size.height - labRect.size.height)/2.0, width: size.width - self.imgSize.width - self.space, height: labRect.size.height);
+              
+            break;
+            
+        case .ImageTopContentCenter:
+             self.imageView?.frame = CGRect(x: size.width/2.0 - self.imgSize.width/2.0, y: size.height/2.0 - self.space/2.0 - self.imgSize.height, width: self.imgSize.width, height: self.imgSize.height)
+               let labRect = self.titleLabel!.textRect(forBounds: CGRect(x: 0, y: size.height/2.0+self.space/2.0, width: size.width , height: size.height/2.0 - self.space/2.0), limitedToNumberOfLines: self.titleLabel!.numberOfLines)
+             self.titleLabel?.frame = CGRect(x: 0, y: size.height/2.0+self.space/2.0, width: size.width, height: labRect.size.height)
+            break;
+        case .ImageBottomContentCenter:
+             self.imageView?.frame = CGRect(x: (size.width - self.imgSize.width)/2.0, y: size.height/2.0+self.space/2.0, width: self.imgSize.width, height: self.imgSize.height)
+             
+              let labRect = self.titleLabel!.textRect(forBounds: CGRect(x: 0, y:0, width: size.width , height: size.height/2.0 - self.space/2.0), limitedToNumberOfLines: self.titleLabel!.numberOfLines)
+             
+             self.titleLabel?.frame = CGRect(x: 0, y: size.height/2.0 - self.space/2.0 - labRect.size.height, width: size.width, height: labRect.size.height);
+            break;
         }
  
     }

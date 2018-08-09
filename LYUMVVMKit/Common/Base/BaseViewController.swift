@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false;
+        self.navigationController?.navigationBar.isHidden = true;
 //        self.shouldAutorotate = false;
 //        self.supportedInterfaceOrientations = .landscape;
 //        preferredInterfaceOrientationForPresentation = .landscapeLeft;

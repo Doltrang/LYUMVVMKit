@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         btn.setTitleColor(UIColor.init(hexString: "787878"), for: .normal);
         btn.titleLabel?.textAlignment = .left;
         btn.titleLabel?.font = FONT(28);
-        btn.layoutContent(style:LYUButtonLayoutStyle.ImageLeft, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
+        btn.layoutContent(style:LYUButtonLayoutStyle.ImageLeftContentCenter, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
         btn.backgroundColor = UIColor.cyan;
         return btn;
     }()
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         btn.setTitleColor(UIColor.init(hexString: "787878"), for: .normal);
         btn.titleLabel?.textAlignment = .left;
         btn.titleLabel?.font = FONT(28);
-        btn.layoutContent(style:LYUButtonLayoutStyle.ImageRight, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
+        btn.layoutContent(style:LYUButtonLayoutStyle.ImageRightContentCenter, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
         btn.backgroundColor = UIColor.cyan;
         return btn;
     }()
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         btn.setTitleColor(UIColor.init(hexString: "787878"), for: .normal);
         btn.titleLabel?.textAlignment = .center;
         btn.titleLabel?.font = FONT(28);
-        btn.layoutContent(style:LYUButtonLayoutStyle.ImageTop, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
+        btn.layoutContent(style:LYUButtonLayoutStyle.ImageTopContentCenter, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
         btn.backgroundColor = UIColor.cyan;
         return btn;
     }()
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         btn.setTitleColor(UIColor.init(hexString: "787878"), for: .normal);
         btn.titleLabel?.textAlignment = .center;
         btn.titleLabel?.font = FONT(28);
-        btn.layoutContent(style:LYUButtonLayoutStyle.ImageBottom, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
+        btn.layoutContent(style:LYUButtonLayoutStyle.ImageTopContentCenter, imgSize: CGSize(width: FIT_WIDTH(102), height: FIT_WIDTH(102)), space: FIT_WIDTH(18));
         btn.backgroundColor = UIColor.cyan;
     }
     
