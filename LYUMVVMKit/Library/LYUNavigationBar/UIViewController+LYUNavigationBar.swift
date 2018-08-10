@@ -171,7 +171,64 @@ extension UIViewController
             return tabBarController.viewControllers!.contains(self);
         }
     }
+   
     
+    static func loadSwizzledMethod(){
+        DispatchQueue.once(token: "UIViewController_LYUNavigationBar_loadSwizzledMethod") {
+            
+           /// exchange viewWillAppear
+            UIViewController.swizzleMethod(originalSelector: #selector(UIViewController.viewWillAppear(_:)), swizzledSelector: #selector(lyu_viewWillAppear(_:)));
+            
+            
+            /// exchange viewDidAppear
+            UIViewController.swizzleMethod(originalSelector: #selector(UIViewController.viewDidAppear(_:)), swizzledSelector: #selector(lyu_viewDidAppear(_:)));
+            
+            /// exchange viewWillDisappear
+            UIViewController.swizzleMethod(originalSelector: #selector(UIViewController.viewWillDisappear(_:)), swizzledSelector: #selector(lyu_viewWillDisappear(_:)))
+    
+            /// exchange viewDidDisappear
+            UIViewController.swizzleMethod(originalSelector: #selector(UIViewController.viewDidDisappear(_:)), swizzledSelector: #selector(lyu_viewDidDisappear(_:)));
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    @objc func lyu_viewWillAppear(_ animated: Bool){
+        if(self.canUpdateNavigationBar()){
+            if(!LYUNavigationBarConfig.needUpdateNavigationBar(vc: self)){
+                if(self.systemNavBarBarTintColor == nil){
+                    self.systemNavBarBarTintColor = self.navBarBarTintColor;
+                }
+             
+            }
+        }
+    }
+   
+    
+    
+    @objc func lyu_viewDidAppear(_ animated: Bool)
+    {
+        
+    }
+    
+    @objc func lyu_viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
+    @objc func lyu_viewDidDisappear(_ animated: Bool) {
+        
+    }
+    
+    func canUpdateNavigationBar() -> Bool {
+        return self.navigationController?.viewControllers.contains(self) ?? false;
+    }
 }
 
 
