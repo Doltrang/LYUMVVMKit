@@ -32,6 +32,7 @@
 		619F8F5C2107658700787055 /* DispatchQueue+Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F5B2107658700787055 /* DispatchQueue+Handle.swift */; };
 		619F8F662113404A00787055 /* EmjoyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */; };
 		619F8F69211342F000787055 /* LYUPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F68211342F000787055 /* LYUPDFView.swift */; };
+		619F8F6B2116CF2000787055 /* LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F6A2116CF2000787055 /* LYUNavigationBar.swift */; };
 		8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517478F20B659F4002CE67A /* LYUViewModelType.swift */; };
 		8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */; };
 		8517479820B68D0D002CE67A /* read_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8517479720B68D0D002CE67A /* read_share.png */; };
@@ -121,6 +122,7 @@
 		619F8F5B2107658700787055 /* DispatchQueue+Handle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Handle.swift"; sourceTree = "<group>"; };
 		619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmjoyCollectionViewLayout.swift; sourceTree = "<group>"; };
 		619F8F68211342F000787055 /* LYUPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUPDFView.swift; sourceTree = "<group>"; };
+		619F8F6A2116CF2000787055 /* LYUNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUNavigationBar.swift; sourceTree = "<group>"; };
 		663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYUMVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8517478F20B659F4002CE67A /* LYUViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUViewModelType.swift; sourceTree = "<group>"; };
 		8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUContentLayoutBtn.swift; sourceTree = "<group>"; };
@@ -891,6 +893,7 @@
 				85A931C720FC461B004C0FB5 /* UINavigationBar+Extension.swift */,
 				85FCAD2720F89D7200BDC10D /* UIViewController+LYUNavigationBar.swift */,
 				619F8F5220F99DA000787055 /* UINavigationController+LYUNavigationBar.swift */,
+				619F8F6A2116CF2000787055 /* LYUNavigationBar.swift */,
 			);
 			path = LYUNavigationBar;
 			sourceTree = "<group>";
@@ -1053,6 +1056,7 @@
 				6118C8E420B84B0900E3B937 /* LYUNotificationCenter.swift in Sources */,
 				85FCAD0E20F759F100BDC10D /* UIDevice+Extension.swift in Sources */,
 				61836CED20DD3F6F0002BB11 /* UIView+Core.swift in Sources */,
+				619F8F6B2116CF2000787055 /* LYUNavigationBar.swift in Sources */,
 				8527AD6C20E398AA0090D185 /* LYUHomeNetworkService.swift in Sources */,
 				617456AC20DE99E3005FF7FD /* HomeViewCell.swift in Sources */,
 				61836CE720DD381E0002BB11 /* BaseViewController.swift in Sources */,

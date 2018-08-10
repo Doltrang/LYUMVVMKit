@@ -77,8 +77,6 @@ class LYURouterOptions: NSObject {
 }
 
 
-
-
 @objc protocol LYURouterHandleDelegate {
     /// app支持的url协议组成的数组
      var lyu_UrlSchemes:[String]{get}
