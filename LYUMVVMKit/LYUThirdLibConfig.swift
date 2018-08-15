@@ -68,7 +68,7 @@ extension AppDelegate
     
     fileprivate func initSwizzledMethod(){
         UINavigationBar.loadSwizzledMethod();
-        UINavigationController.loadSwizzledMethod();
+        UINavigationController.loadNavigationSwizzledMethod();
     }
 }
 

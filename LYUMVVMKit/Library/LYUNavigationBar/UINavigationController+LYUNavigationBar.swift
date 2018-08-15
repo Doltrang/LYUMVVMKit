@@ -106,7 +106,8 @@ extension UINavigationController{
 // MARK:交换方法
 extension UINavigationController{
  
-    static func loadSwizzledMethod(){
+    @objc static func loadNavigationSwizzledMethod(){
+        
         DispatchQueue.once(token: "UINavigationController_LYUNavigationBar_loadSwizzledMethod") {
            
             let _updateInteractiveTransition = Selector("_update(_ :)");
@@ -122,8 +123,6 @@ extension UINavigationController{
             
             ///exchange popToRootViewControllerAnimated
             UINavigationController.swizzleMethod(originalSelector: #selector(UINavigationController.popToRootViewController(animated:)), swizzledSelector: #selector(lyu_popToRootViewController(animated:)));
-            
-            
         }
         
         
