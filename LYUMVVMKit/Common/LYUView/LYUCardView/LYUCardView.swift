@@ -29,6 +29,8 @@ class LYUCardView: UIView {
         }
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self
+       
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
