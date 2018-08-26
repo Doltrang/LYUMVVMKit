@@ -14,19 +14,16 @@ protocol Shakeable:NSObjectProtocol {
     
 }
 
+extension Shakeable where Self: UIView{
+
+}
+
+
 private let UIViewAnimationDuration: TimeInterval = 1
 private let UIViewAnimationSpringDamping: CGFloat = 0.5
 private let UIViewAnimationSpringVelocity: CGFloat = 0.5
 
-
-extension Shakeable where Self: UIView{
-    
-    //MARK:-移除所有的子视图
-    func removeSubviews(){
-        let _ =  self.subviews.map {
-            $0.removeFromSuperview()
-        }
-    }
+extension UIView:Shakeable{
     
     //MARK:-缩放效果
     func scaleAnimation(){
@@ -121,4 +118,12 @@ extension Shakeable where Self: UIView{
             self?.setScale(x: 1, y: 1)
         })
     }
+    
+    //MARK:-移除所有的子视图
+    func removeSubviews(){
+        let _ =  self.subviews.map {
+            $0.removeFromSuperview()
+        }
+    }
 }
+

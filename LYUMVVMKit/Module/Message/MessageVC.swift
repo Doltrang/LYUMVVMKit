@@ -10,8 +10,7 @@ import UIKit
 
 class MessageVC: BaseViewController {
 
-    let semaphore = DispatchSemaphore(value: 0);
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let lab = UILabel()
@@ -26,20 +25,14 @@ class MessageVC: BaseViewController {
 //
 //        self.view.addSubview(lab)
       
-        for i in 0..<10000{
-               debugPrint("-------")
-         let result =    semaphore.wait(timeout: DispatchTime.distantFuture);
-            LLog(result);
-            LLog("\(i)")
-           
-        }
+
         
         
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-         semaphore.signal();
+       
 //        LYURouter.open(vc: LoginVC());
         
     }

@@ -33,6 +33,8 @@
 		619F8F662113404A00787055 /* EmjoyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */; };
 		619F8F69211342F000787055 /* LYUPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F68211342F000787055 /* LYUPDFView.swift */; };
 		619F8F6B2116CF2000787055 /* LYUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8F6A2116CF2000787055 /* LYUNavigationBar.swift */; };
+		619F8FA42132C5EC00787055 /* LoginForeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8FA32132C5EC00787055 /* LoginForeVC.swift */; };
+		619F8FA62132F0F800787055 /* LoginForeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F8FA52132F0F800787055 /* LoginForeVM.swift */; };
 		8517479020B659F4002CE67A /* LYUViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517478F20B659F4002CE67A /* LYUViewModelType.swift */; };
 		8517479420B66B92002CE67A /* LYUContentLayoutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */; };
 		8517479820B68D0D002CE67A /* read_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8517479720B68D0D002CE67A /* read_share.png */; };
@@ -125,6 +127,8 @@
 		619F8F652113404A00787055 /* EmjoyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmjoyCollectionViewLayout.swift; sourceTree = "<group>"; };
 		619F8F68211342F000787055 /* LYUPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUPDFView.swift; sourceTree = "<group>"; };
 		619F8F6A2116CF2000787055 /* LYUNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUNavigationBar.swift; sourceTree = "<group>"; };
+		619F8FA32132C5EC00787055 /* LoginForeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForeVC.swift; sourceTree = "<group>"; };
+		619F8FA52132F0F800787055 /* LoginForeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForeVM.swift; sourceTree = "<group>"; };
 		663DE462A08F88B96902891D /* Pods_LYUMVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYUMVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8517478F20B659F4002CE67A /* LYUViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUViewModelType.swift; sourceTree = "<group>"; };
 		8517479320B66B92002CE67A /* LYUContentLayoutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUContentLayoutBtn.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				61836CF620DDD6760002BB11 /* LoginVM.swift */,
+				619F8FA52132F0F800787055 /* LoginForeVM.swift */,
 			);
 			path = LoginVM;
 			sourceTree = "<group>";
@@ -834,6 +839,7 @@
 				61836CF520DDD6670002BB11 /* LoginVM */,
 				61836CF020DDD5060002BB11 /* M */,
 				854D3E0F20A9942F00DA8326 /* LoginVC.swift */,
+				619F8FA32132C5EC00787055 /* LoginForeVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1101,6 +1107,7 @@
 				854D3DFA20A9919400DA8326 /* UIColor+Extension.swift in Sources */,
 				854D3DFC20A9919400DA8326 /* UILabel+Extension.swift in Sources */,
 				61836D0620DE04EB0002BB11 /* HomeViewModel.swift in Sources */,
+				619F8FA42132C5EC00787055 /* LoginForeVC.swift in Sources */,
 				61836D1220DE1EF30002BB11 /* MessageVC.swift in Sources */,
 				854D3E0020A9919400DA8326 /* UIView+Animation.swift in Sources */,
 				619F8F69211342F000787055 /* LYUPDFView.swift in Sources */,
@@ -1125,6 +1132,7 @@
 				851747A320B79EBE002CE67A /* LYUMapToModelExtension.swift in Sources */,
 				854D3E0620A9919400DA8326 /* UIViewController+UIBarButtonItem.swift in Sources */,
 				85FCAD2220F75AA800BDC10D /* LYUNavigationBarConfig.swift in Sources */,
+				619F8FA62132F0F800787055 /* LoginForeVM.swift in Sources */,
 				854D3DFB20A9919400DA8326 /* UIImage+Extension.swift in Sources */,
 				61836CF420DDD5970002BB11 /* BaseModel.swift in Sources */,
 				61836CFD20DDDEBC0002BB11 /* BaseViewModel.swift in Sources */,

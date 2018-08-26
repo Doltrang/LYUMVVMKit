@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white;
-        self.window?.rootViewController = LYUMainVC();
+        self.window?.rootViewController = BaseNavigationController(rootViewController: LoginForeVC());
 //        self.window?.rootViewController = LoginVC();
        self.window?.makeKeyAndVisible()
         

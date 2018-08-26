@@ -232,11 +232,6 @@ extension UIView {
         return currentHeight
     }
     
-    public func removeSubviews() {
-        for subview in subviews {
-            subview.removeFromSuperview()
-        }
-    }
     
     /// EZSE: Centers view in superview horizontally
     public func centerXInSuperView() {

@@ -13,15 +13,7 @@ class VideoVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let v = LYUCardView.init(frame: CGRect.zero);
-        self.view.addSubview(v)
-        v.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview();
-            make.top.equalTo(FIT_WIDTH(300));
-            make.height.equalTo(400);
-        }
-        v.backgroundColor = UIColor.red
-        
+ 
         
         
 //        for i in 0..<3{

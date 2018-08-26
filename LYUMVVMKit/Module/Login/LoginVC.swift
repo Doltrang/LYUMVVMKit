@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: BaseViewController {
 
     var accountTF:UITextField = {
         let tf = UITextField()
@@ -35,7 +35,7 @@ class LoginVC: UIViewController {
         let btn = UIButton()
         btn.setTitle("登录", for: .normal);
         btn.setTitleColor(UIColor.red, for: .normal);
-        btn.setNeedsCameraPermission();
+//        btn.setNeedsCameraPermission();
         return btn;
     }()
     
@@ -44,7 +44,7 @@ class LoginVC: UIViewController {
         let btn = UIButton()
         btn.setTitle("登录", for: .normal);
         btn.setTitleColor(UIColor.red, for: .normal);
-        btn.setNeedsCameraPermission();
+//        btn.setNeedsCameraPermission();
         
         return btn;
     }()

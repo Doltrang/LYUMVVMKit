@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false;
         self.navigationController?.navigationBar.isHidden = true;
+        self.view.backgroundColor = UIColor.white
 //        self.shouldAutorotate = false;
 //        self.supportedInterfaceOrientations = .landscape;
 //        preferredInterfaceOrientationForPresentation = .landscapeLeft;
