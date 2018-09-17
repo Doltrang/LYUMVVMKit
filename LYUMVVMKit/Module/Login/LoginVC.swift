@@ -56,6 +56,8 @@ class LoginVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "登录"
+        self.navigationController?.navigationBar.isHidden = false;
+        
         setupUI()/// 初始化UI
         bindView()/// 绑定视图的业务逻辑
     }
