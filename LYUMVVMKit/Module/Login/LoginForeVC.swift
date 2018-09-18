@@ -132,6 +132,7 @@ extension LoginForeVC{
     fileprivate func bindUI(){
         self.vm = LoginForeVM()
         self.vm.transform(skip: self.skipBtn.rx.tap.asSignal(), register: self.registerBtn.rx.tap.asSignal(), login: self.loginBtn.rx.tap.asSignal());
+        
 //        self.loginBtn.rx.tap.subscribe(onNext: {
 //            self.logingLogoImageV.pop()
 //        })
