@@ -21,33 +21,33 @@ class LoginVC: BaseViewController {
         return tf;
     }()
     
-    
-    var confirmPwdTF:UITextField = {
-        let tf = UITextField()
-        tf.backgroundColor = UIColor.gray
-        return tf;
+    fileprivate var loginHeadLab:UILabel = {
+        let lab = UILabel()
+        lab.textColor = UIColor.init(hexString: "333333");
+        lab.font = FONT(60);
+        lab.text = "登录"
+        return lab;
     }()
     
-    let desLab = UILabel()
-    
+    fileprivate var loginInfoLab:UILabel = {
+        let lab = UILabel()
+        lab.textColor = UIColor.init(hexString: "9B9B9B");
+        lab.font = FONT(26)
+        lab.text = "一眼就让孩子爱上阅读的动画书"
+        return lab;
+    }()
+
+
     
     var loginBtn:UIButton = {
         let btn = UIButton()
         btn.setTitle("登录", for: .normal);
         btn.setTitleColor(UIColor.red, for: .normal);
-//        btn.setNeedsCameraPermission();
         return btn;
     }()
     
     
-    var testBtn:UIButton = {
-        let btn = UIButton()
-        btn.setTitle("登录", for: .normal);
-        btn.setTitleColor(UIColor.red, for: .normal);
-//        btn.setNeedsCameraPermission();
-        
-        return btn;
-    }()
+
     
     
     let viewModel = LoginVM()
@@ -67,52 +67,18 @@ class LoginVC: BaseViewController {
 extension LoginVC
 {
     fileprivate func setupUI(){
-        self.view.addSubview(accountTF)
-        self.view.addSubview(pwdTF)
-        view.addSubview(confirmPwdTF)
-        view.addSubview(loginBtn);
-        self.accountTF.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.view);
-            make.width.equalTo(FIT_WIDTH(400))
-            make.height.equalTo(FIT_WIDTH(80))
-            make.topMargin.equalTo(self.view.snp.top).offset(FIT_WIDTH(80))
-        }
-        
-        
-        self.pwdTF.snp.makeConstraints { (make) in
-            make.centerX.width.height.equalTo(self.accountTF);
-            make.top.equalTo(self.accountTF.snp.bottom).offset(FIT_WIDTH(100))
-        }
-        confirmPwdTF.snp.makeConstraints { (make) in
-             make.centerX.width.height.equalTo(self.accountTF);
-            make.bottom.equalTo(self.view.snp.bottom).offset(FIT_WIDTH(100));
+        self.view.addSubview(self.loginHeadLab);
+        self.loginHeadLab.snp.makeConstraints { (make) in
             
         }
         
-        loginBtn.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview();
-            make.width.equalTo(FIT_WIDTH(120));
-            make.height.equalTo(FIT_WIDTH(40));
-            make.top.equalTo(confirmPwdTF.snp.bottom).offset(FIT_WIDTH(40));
-        }
-        loginBtn.addTarget(self, action: #selector(showToast), for: .touchUpInside);
-        
-        
-        view.addSubview(self.testBtn);
-        self.testBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(100);
-            make.width.height.equalTo(200);
-            make.top.equalTo(self.loginBtn.snp.bottom).offset(100);
-        }
+        self.view.addSubview(self.loginInfoLab);
+     
         
         
         
-        UIView.animate(withDuration: 1) {
-            self.testBtn.snp.updateConstraints { (make) in
-                make.left.equalTo(200);
-            }
-            self.testBtn.layoutIfNeeded();
-        }
+        
+      
     }
 }
 
@@ -120,8 +86,8 @@ extension LoginVC
 extension LoginVC
 {
     fileprivate func bindView(){
-      
-     let vmInput =   LoginVM.Input(username: self.accountTF.rx.text.orEmpty.asDriver(), password: self.pwdTF.rx.text.orEmpty.asDriver(), repeatedPassword: self.confirmPwdTF.rx.text.orEmpty.asDriver(), loginTaps: self.loginBtn.rx.tap.asSignal());
+//
+//     let vmInput =   LoginVM.Input(username: self.accountTF.rx.text.orEmpty.asDriver(), password: self.pwdTF.rx.text.orEmpty.asDriver(), repeatedPassword: self.confirmPwdTF.rx.text.orEmpty.asDriver(), loginTaps: self.loginBtn.rx.tap.asSignal());
         
 
        

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SnapKit
+
 
 import RxSwift
 import RxCocoa
@@ -95,17 +97,26 @@ extension LoginForeVC{
         }
         
         self.view.addSubview(self.loginInfoLab)
+        
+        var topConstraint:Constraint? = nil
         self.loginInfoLab.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
+//            make.left.right.equalToSuperview()
             make.height.equalTo(FIT_WIDTH(40))
             make.top.equalTo(self.logingLogoImageV.snp.bottom).offset(FIT_WIDTH(47))
+            make.centerX.equalToSuperview()
+            make.width.greaterThanOrEqualTo(FIT_WIDTH(100)).offset(100);
+            topConstraint = make.width.greaterThanOrEqualTo(FIT_WIDTH(100)).offset(10).constraint
         }
+
+   
+        self.loginInfoLab.backgroundColor =  UIColor.red
         self.view.addSubview(self.loginBtn)
         self.loginBtn.snp.makeConstraints { (make) in
             make.width.equalTo(FIT_WIDTH(289))
             make.height.equalTo(FIT_WIDTH(94))
             make.right.equalTo(self.view.snp.centerX).offset(-FIT_WIDTH(27));
             make.top.equalTo(self.logingLogoImageV.snp.bottom).offset(FIT_WIDTH(343))
+            
         }
         
         self.view.addSubview(self.registerBtn);

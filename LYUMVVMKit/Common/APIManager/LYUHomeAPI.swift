@@ -13,6 +13,8 @@ import Moya
 import RxCocoa
 import RxSwift
 import Result
+//import Alamofire
+
 
 enum LYUHomeAPI {
  
@@ -82,3 +84,11 @@ let requestClosure = { (endpoint: Endpoint, closure: (Result<URLRequest, MoyaErr
     
 }
 let LYUHomeNetTool = MoyaProvider<LYUHomeAPI>(requestClosure: requestClosure)
+
+
+
+
+
+
+
+
