@@ -27,6 +27,7 @@ struct HomeResult:HandyJSON {
     var url         = ""
     var used        = ""
     var who         = ""
+    var cell_height:CGFloat = 0.0;
 }
 
 struct HomeSection {

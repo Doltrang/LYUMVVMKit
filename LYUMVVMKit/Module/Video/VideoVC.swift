@@ -14,17 +14,6 @@ class VideoVC: BaseViewController {
         super.viewDidLoad()
         
  
-        
-        
-//        for i in 0..<3{
-//            LLog(i);
-//            let v = LYUBasePopWindow(frame: self.view.bounds);
-//            v.backgroundColor = UIColor.random()
-//            v.lab.text = "\(i)"
-//            LYUPopWindowManager.shareManager.showPopView(popView: v);
-//        }
-//
-//        self.view.backgroundColor = UIColor.red;
     }
 
     override func didReceiveMemoryWarning() {

@@ -68,7 +68,7 @@ class LYURouterOptions: NSObject {
     /// - Parameter params: 参数传递
     /// - Returns: options对象
     class func options(params:[String:AnyHashable] = [String:AnyHashable]() ) -> LYURouterOptions{
-        let option = self.init()
+        let option = LYURouterOptions();
         option.defaultParams = params;
         option.transformStyle = .Push;
         return option;

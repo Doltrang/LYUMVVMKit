@@ -56,9 +56,12 @@ extension HomeVC
             cell.descLabel.text = model.desc
             cell.sourceLabel.text = "来源:" + model.source + "类别:" +  model.type;
             cell.imageV.kf.setImage(with: URL(string: model.url))
-         
+            
+//               self.vmOutput?.sections
+//             = cell.contentView.systemLayoutSizeFitting(CGSize(width: tableView.w, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
             return cell
         })
+        
         
         
         tableView.rx.modelSelected(HomeResult.self).subscribe { (event) in
@@ -87,7 +90,8 @@ extension HomeVC
 //            }.disposed(by: disposeBag);
    
         // 设置代理
-//        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        
         tableView.setupRefreshBlocking(refreshHeader: true, refreshFooter: true) { (type) in
             switch (type){
             case .loadNewData:
@@ -130,3 +134,6 @@ extension HomeVC
     }
 }
 
+extension HomeVC:UITableViewDelegate{
+   
+}

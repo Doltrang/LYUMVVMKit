@@ -21,7 +21,7 @@ target 'LYUMVVMKit' do
   pod 'Kingfisher', '~> 4.6.3'
   pod 'MJRefresh', '~> 3.1.15.3'
   pod 'SVProgressHUD', '~> 2.2.5'
-  pod 'HandyJSON', '~> 4.1.1'
+  pod 'HandyJSON', '~> 4.2.0'
   #  pod 'MonkeyKing'
 
 post_install do |installer|
