@@ -68,9 +68,21 @@ class LoginForeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad();
-
+        self.navigationController?.navigationBar.isHidden = true;
         setupUI();
         bindUI();
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true);
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false);
     }
 }
 
@@ -98,18 +110,14 @@ extension LoginForeVC{
         
         self.view.addSubview(self.loginInfoLab)
         
-        var topConstraint:Constraint? = nil
+       
         self.loginInfoLab.snp.makeConstraints { (make) in
-//            make.left.right.equalToSuperview()
             make.height.equalTo(FIT_WIDTH(40))
             make.top.equalTo(self.logingLogoImageV.snp.bottom).offset(FIT_WIDTH(47))
             make.centerX.equalToSuperview()
             make.width.greaterThanOrEqualTo(FIT_WIDTH(100)).offset(100);
-            topConstraint = make.width.greaterThanOrEqualTo(FIT_WIDTH(100)).offset(10).constraint
         }
 
-   
-        self.loginInfoLab.backgroundColor =  UIColor.red
         self.view.addSubview(self.loginBtn)
         self.loginBtn.snp.makeConstraints { (make) in
             make.width.equalTo(FIT_WIDTH(289))

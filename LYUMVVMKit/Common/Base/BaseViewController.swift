@@ -17,22 +17,21 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false;
-        self.navigationController?.navigationBar.isHidden = true;
         self.view.backgroundColor = UIColor.white
         
-        self.view.addSubview(backBtn)
-        backBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(FIT_WIDTH(65))
-            make.top.equalTo(FIT_WIDTH(66))
-            make.width.equalTo(FIT_WIDTH(66))
-           
-        }
+//        self.view.addSubview(backBtn)
+//        backBtn.snp.makeConstraints { (make) in
+//            make.left.equalTo(FIT_WIDTH(65))
+//            make.top.equalTo(FIT_WIDTH(66))
+//            make.width.equalTo(FIT_WIDTH(66))
+//           
+//        }
 //        self.shouldAutorotate = false;
 //        self.supportedInterfaceOrientations = .landscape;
 //        preferredInterfaceOrientationForPresentation = .landscapeLeft;
-        backBtn.rx.tap.subscribe(onNext: {
-            self.navigationController?.popViewController(animated: false);
-        }).disposed(by: disposeBag)
+//        backBtn.rx.tap.subscribe(onNext: {
+//            self.navigationController?.popViewController(animated: false);
+//        }).disposed(by: disposeBag)
     }
 
     

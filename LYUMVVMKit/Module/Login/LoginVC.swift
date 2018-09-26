@@ -56,28 +56,30 @@ class LoginVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "登录"
-        self.navigationController?.navigationBar.isHidden = false;
         
         setupUI()/// 初始化UI
         bindView()/// 绑定视图的业务逻辑
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+  
+    }
     
 }
 
 extension LoginVC
 {
     fileprivate func setupUI(){
-        self.view.addSubview(self.loginHeadLab);
-        self.loginHeadLab.snp.makeConstraints { (make) in
-            
-        }
-        
-        self.view.addSubview(self.loginInfoLab);
+//        self.view.addSubview(self.loginHeadLab);
+//        self.loginHeadLab.snp.makeConstraints { (make) in
+//
+//        }
+//
+//        self.view.addSubview(self.loginInfoLab);
      
         
-        
+        self.view.backgroundColor = .red;
         
         
       

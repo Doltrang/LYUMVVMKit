@@ -58,7 +58,10 @@ extension HomeVC
             cell.imageV.kf.setImage(with: URL(string: model.url))
             
 //               self.vmOutput?.sections
-//             = cell.contentView.systemLayoutSizeFitting(CGSize(width: tableView.w, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
+//             =
+            LLog("\(index):\(cell.contentView.systemLayoutSizeFitting(CGSize(width: self.tableView.w, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height)")
+            
+            
             return cell
         })
         
@@ -136,4 +139,8 @@ extension HomeVC
 
 extension HomeVC:UITableViewDelegate{
    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        LLog("\(indexPath): heightForRowAt");
+        return UITableViewAutomaticDimension;
+    }
 }
