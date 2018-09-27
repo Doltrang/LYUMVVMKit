@@ -69,6 +69,17 @@ class LYURouter: NSObject {
         /// 初始化挂钩函数
 //        hookPushVC();
 //        hookPopVC()
+        let typeCount = Int(objc_getClassList(nil, 0))
+        let  types = UnsafeMutablePointer<AnyClass>.allocate(capacity: typeCount)
+        let autoreleaseintTypes = AutoreleasingUnsafeMutablePointer<AnyClass>(types)
+        objc_getClassList(autoreleaseintTypes, Int32(typeCount)) //获取所有的类
+        for index in 0 ..< typeCount{
+            //
+            LLog(types[index])
+        }
+        types.deallocate()
+        
+   
         
         return router;
     }()
